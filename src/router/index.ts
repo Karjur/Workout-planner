@@ -1,10 +1,17 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router';
 import WorkoutsVue from '@/views/Workouts.vue';
 import AddWorkoutVue from '@/views/AddWorkout.vue';
+import SportlyzMainVue from '@/views/SportlyzMain.vue';
 
 const routes: Array<RouteRecordRaw> = [
   {
     path: '/',
+    name: 'Sportlyz',
+    component: SportlyzMainVue,
+    props: { title: 'Sportlyz'},
+  },
+  {
+    path: '/trainings',
     name: 'Trennid',
     component: WorkoutsVue,
     props: { title: 'Trennid' },
