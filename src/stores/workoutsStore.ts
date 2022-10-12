@@ -11,7 +11,7 @@ export const useWorkoutsStore = defineStore('exercisesStore', () => {
   ]);
 
   const addWorkout = (workout: Workout) => {
-    workout.value.push(workout);
+    workouts.value.push(workout);
   };
 
   return { workouts, addWorkout };
