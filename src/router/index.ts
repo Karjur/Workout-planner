@@ -4,6 +4,7 @@ import AddWorkoutVue from '@/views/AddWorkout.vue';
 import SportlyzMainVue from '@/views/SportlyzMain.vue';
 import GroupsVue from '@/views/Groups.vue';
 import AddGroupVue from '@/views/AddGroup.vue';
+import ProfileSprtman from '@/views/ProfileSportman.vue';
 
 
 const routes: Array<RouteRecordRaw> = [
@@ -29,6 +30,10 @@ const routes: Array<RouteRecordRaw> = [
     name: 'Groups',
     component: GroupsVue,
     props: { title: 'Groups' },
+  },
+  {
+    path: '/profile-sportsman',
+    component: ProfileSprtman,
   },
   {
     path: '/newgroup',
