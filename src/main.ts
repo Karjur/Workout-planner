@@ -12,6 +12,8 @@ import router from './router';
 import "./styles/style.scss";
 import DialogService from 'primevue/dialogservice';
 import ui from "@/components/UI/index";
+import Datepicker from '@vuepic/vue-datepicker';
+
 
 const app = createApp(App);
 
@@ -21,6 +23,8 @@ app.use(PrimeVue);
 ui.forEach(u => {
     app.component(u.name, u);
 })
+
+app.component('Datepicker', Datepicker);
 app.use(router);
 
 app.component('DataTable', DataTable);

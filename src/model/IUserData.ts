@@ -1,7 +1,7 @@
 export interface IUserData {
     name: string;
     surname: string;
-    age: number;
+    DoB: string;
     weight: number;
     height: number;
     gender: Gender;

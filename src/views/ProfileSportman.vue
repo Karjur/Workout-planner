@@ -28,7 +28,7 @@
                         </tr>
                         <tr>
                             <th>Age:</th>
-                            <th>{{userData.age}}</th>
+                            <th>{{getAgeFromDate(userData.DoB)}}</th>
                         </tr>
                         <tr>
                             <th>Gender</th>
@@ -76,7 +76,14 @@
                         <div class="modal-body">
                             <app-input :label="'Name'" v-model="editUserData.name" />
                             <app-input :label="'Surname'" v-model="editUserData.surname" />
-                            <app-input :label="'Age'" v-model="editUserData.age" />
+                            <div class="row g-3 align-items-center mt-2">
+                                <div class="col-auto">
+                                <label for="inputPassword6" class="col-form-label">Date of Birthday</label>
+                                </div>
+                                <div class="col-auto">
+                                    <Datepicker v-model="editUserData.DoB" />
+                                </div>
+                            </div>
                             <app-input :label="'Gender'" v-model="editUserData.gender" :selectLabel="'Select Gender'" :selectList="genderList" />
                             <app-input :label="'Weight'" v-model="editUserData.weight" />
                             <app-input :label="'Height'" v-model="editUserData.height" />
@@ -97,12 +104,18 @@ import { Gender, IUserData } from '@/model/IUserData';
 import { getEnumArray, getKeyByValueEnum } from '@/services/getEnumObject';
 import { generate } from '@vue/compiler-core';
 import { defineComponent, ref } from 'vue';
+import Datepicker from '@vuepic/vue-datepicker';
+    import '@vuepic/vue-datepicker/dist/main.css'
+import { getAgeFromDate } from '@/services/date';
 
 export default defineComponent({
+    
+    components: {Datepicker },
     setup() {
+        const defaultDoB = new Date(2002, 9, 13).toString();
         const userData = ref<IUserData>({
-            age: 20,
             gender: Gender.Male,
+            DoB: defaultDoB,
             height: 1.83,
             weight: 100,
             name: "Dinoel",
@@ -110,8 +123,8 @@ export default defineComponent({
         });
 
         const editUserData = ref<IUserData>({
-            age: 20,
             gender: Gender.Male,
+            DoB: defaultDoB,
             height: 1.83,
             weight: 100,
             name: "Dinoel",
@@ -137,7 +150,7 @@ export default defineComponent({
 
         const genderList = getEnumArray(Gender); 
 
-        return {closeImgElem, submitUploadImgProfile, closeElem, submitEditProfile, editUserData, userData, genderList, getKeyByValueEnum, Gender};
+        return {getAgeFromDate, closeImgElem, submitUploadImgProfile, closeElem, submitEditProfile, editUserData, userData, genderList, getKeyByValueEnum, Gender};
     }
 })
 </script>
