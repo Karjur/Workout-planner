@@ -3,7 +3,7 @@ export interface Workout {
   trainer: string;
   description: string;
   location: string;
-  date: string;
+  date: Date;
 }
 
 export interface State {

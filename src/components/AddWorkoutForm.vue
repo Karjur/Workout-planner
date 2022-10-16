@@ -47,13 +47,7 @@
           </div>
           <div>
             <label for="date">Kuupäev</label>
-            <input
-              id="date"
-              name="date"
-              v-model="workout.date"
-              class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
-              placeholder="Kuupäev"
-            />
+            <Datepicker v-model="workout.date"></Datepicker>
           </div>
         </div>
 
@@ -75,9 +69,11 @@
 <script setup lang="ts">
 import { Workout } from '@/model/workout';
 import { useWorkoutsStore } from '@/stores/workoutsStore';
+import { isDate } from 'util/types';
 import { ref, Ref } from 'vue';
-
 import { useRouter } from 'vue-router';
+import Datepicker from '@vuepic/vue-datepicker';
+import '@vuepic/vue-datepicker/dist/main.css'
 
 const workout: Ref<Workout> = ref({ name: '', trainer: '', description: '', location: '', date: '' });
 const { addWorkout } = useWorkoutsStore();
