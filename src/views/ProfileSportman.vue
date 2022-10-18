@@ -2,7 +2,7 @@
     <div class="bg-gray-50 py-12 px-4 sm:px-6 lg:px-8 text-dark-300">
         <div class="container">
             <div class="text-center bg-gray-50">
-            <h1>Your profile</h1>
+            <h1>Sinu profiil</h1>
             <div class="row mt-5 profile-container p-2">
               
                 <div class="col-4" >
@@ -19,27 +19,27 @@
                 </div>
                     <table class="table profile-table">
                         <tr>
-                            <th>Name:</th>
+                            <th>Eesnimi:</th>
                             <th>{{userData.name}}</th>
                         </tr>
                         <tr>
-                            <th>Surname:</th>
+                            <th>Perekonnanimi:</th>
                             <th>{{userData.surname}}</th>
                         </tr>
                         <tr>
-                            <th>Age:</th>
+                            <th>Vanus:</th>
                             <th>{{getAgeFromDate(userData.DoB)}}</th>
                         </tr>
                         <tr>
-                            <th>Gender</th>
+                            <th>Sugu</th>
                             <th>{{getKeyByValueEnum(Gender, userData.gender)}}</th>
                         </tr>
                         <tr>
-                            <th>Weight:</th>
+                            <th>Kaal:</th>
                             <th>{{userData.weight}}kg</th>
                         </tr>
                         <tr>
-                            <th>Height:</th>
+                            <th>Pikkus:</th>
                             <th>{{userData.height}}m</th>
                         </tr>
                     </table>
@@ -74,19 +74,19 @@
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
-                            <app-input :label="'Name'" v-model="editUserData.name" />
-                            <app-input :label="'Surname'" v-model="editUserData.surname" />
+                            <app-input :label="'Eesnimi'" v-model="editUserData.name" />
+                            <app-input :label="'Perekonnanimi'" v-model="editUserData.surname" />
                             <div class="row g-3 align-items-center mt-2">
                                 <div class="col-auto">
-                                <label for="inputPassword6" class="col-form-label">Date of Birthday</label>
+                                <label for="inputPassword6" class="col-form-label">Sünnikuupäev</label>
                                 </div>
                                 <div class="col-auto">
                                     <Datepicker v-model="editUserData.DoB" />
                                 </div>
                             </div>
-                            <app-input :label="'Gender'" v-model="editUserData.gender" :selectLabel="'Select Gender'" :selectList="genderList" />
-                            <app-input :label="'Weight'" v-model="editUserData.weight" />
-                            <app-input :label="'Height'" v-model="editUserData.height" />
+                            <app-input :label="'Sugu'" v-model="editUserData.gender" :selectLabel="'Select Gender'" :selectList="genderList" />
+                            <app-input :label="'Kaal'" v-model="editUserData.weight" />
+                            <app-input :label="'Pikkus'" v-model="editUserData.height" />
 
                         </div>
                         <div class="modal-footer">
