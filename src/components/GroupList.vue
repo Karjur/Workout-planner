@@ -2,12 +2,12 @@
     <div class="bg-gray-50 py-12 px-4 sm:px-6 lg:px-8 text-dark-300">
       <div class="text-center bg-gray-50">
         <h1 class="font-bold">{{ title }}</h1>
-        <p v-if="groups.length === 0">No groups</p>
+        <p v-if="groups.length === 0">Tühi</p>
         <DataTable :value="groups" v-if="groups.length !== 0">
-          <Column field="name" header="Group name" />
-          <Column field="nrOfParticipants" header="Number of participants" />
-          <Column field="status" header="Status" />
-          <Column field="coachName" header="Coach name" />
+          <Column field="name" header="Grupi nimi" />
+          <Column field="nrOfParticipants" header="Osalejate arv" />
+          <Column field="status" header="Staatus" />
+          <Column field="coachName" header="Treener" />
         </DataTable>
       </div>
     </div>

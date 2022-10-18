@@ -44,14 +44,14 @@
                 class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
                 active-class="bg-gray-900 text-white"
                 aria-current="page"
-                >Training groups</router-link
+                >Treening grupid</router-link
               >
 
               <router-link
                 to="/newgroup"
                 class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
                 active-class="bg-gray-900 text-white"
-                >Add training group</router-link
+                >Lisa treening grupp</router-link
                 >
             </div>
           </div>

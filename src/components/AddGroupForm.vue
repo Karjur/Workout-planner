@@ -6,27 +6,27 @@
       <div class="mt-8 space-y-6">
         <div class="rounded-md shadow-sm -space-y-px">
           <div>
-            <label for="name">Group name</label>
+            <label for="name">Grupi nimi</label>
             <input
               id="name"
               name="name"
               v-model="group.name"
               class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
-              placeholder="name"
+              placeholder="Nimi"
             />
           </div>
           <div>
-            <label for="coachName">Coach name</label>
+            <label for="coachName">Treener</label>
             <input
               id="coachName"
               name="coachName"
               v-model="group.coachName"
               class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
-              placeholder="coachName"
+              placeholder="Treener"
             />
           </div>
           <div>
-            <label for="status">Status</label>
+            <label for="status">Staatus</label>
             <br />
             <input
               type="radio"
@@ -35,7 +35,7 @@
               v-model="group.status"
               checked
             />
-            <label for="enable">Available</label>
+            <label for="enable">Avatud</label>
             <br />
             <input
               type="radio"
@@ -43,17 +43,17 @@
               value="Non-Available"
               v-model="group.status"
             />
-            <label for="disable">Non-available</label>
+            <label for="disable">Kinnine</label>
           </div>
           <div>
-            <label for="nrOfParticipants">Number of participants</label>
+            <label for="nrOfParticipants">Osalejate arv</label>
             <input
               type="number"
               id="nrOfParticipants"
               name="nrOfParticipants"
               v-model="group.nrOfParticipants"
               class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
-              placeholder="nrOfParticipants"
+              placeholder="Osalejate arv"
             />
           </div>
         </div>
@@ -64,7 +64,7 @@
           >
             <span class="absolute left-0 inset-y-0 flex items-center pl-3">
             </span>
-            Add training group
+            Lisa treening grupp
           </button>
         </div>
       </div>
@@ -82,7 +82,7 @@ import { useRouter } from 'vue-router';
 const group: Ref<Group> = ref({
   name: '',
   coachName: '',
-  status: '',
+  status: 'Avatud',
   nrOfParticipants: 0,
 });
 const { addGroup } = useGroupsStore();

@@ -4,8 +4,8 @@ import { ref } from 'vue';
 
 export const useGroupsStore = defineStore('groupsStore', () => {
   const groups = ref<Group[]>([
-    { name: 'Football', coachName: 'Mati', status: 'Available', nrOfParticipants: 15 },
-    { name: 'Basketball', coachName: 'Kati', status: 'Non-available', nrOfParticipants: 10},
+    { name: 'Jalgpall', coachName: 'Mati', status: 'Avatud', nrOfParticipants: 15 },
+    { name: 'Korvpall', coachName: 'Kati', status: 'Kinnine', nrOfParticipants: 10},
   ]);
 
   const addGroup = (group: Group) => {
