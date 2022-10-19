@@ -1,5 +1,5 @@
 <template>
-    <SportlyzForm title="Sportlyz" />
+    <SportlyzForm title="Avaleht" />
 </template>
 
 <script setup lang="ts">

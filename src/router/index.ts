@@ -10,9 +10,9 @@ import ProfileSprtman from '@/views/ProfileSportman.vue';
 const routes: Array<RouteRecordRaw> = [
   {
     path: '/',
-    name: 'Sportlyz',
+    name: 'Avaleht',
     component: SportlyzMainVue,
-    props: { title: 'Sportlyz'},
+    props: { title: 'Avaleht'},
   },
   {
     path: '/trainings',
@@ -27,9 +27,9 @@ const routes: Array<RouteRecordRaw> = [
   },
   {
     path: '/groups',
-    name: 'Groups',
+    name: 'Grupid',
     component: GroupsVue,
-    props: { title: 'Groups' },
+    props: { title: 'Grupid' },
   },
   {
     path: '/profile-sportsman',
@@ -37,7 +37,7 @@ const routes: Array<RouteRecordRaw> = [
   },
   {
     path: '/newgroup',
-    name: 'Add group',
+    name: 'Lisa grupp',
     component: AddGroupVue,
   },
 ];

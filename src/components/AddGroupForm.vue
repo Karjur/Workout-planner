@@ -1,7 +1,6 @@
 <template>
   <div
-    class="min-h-full flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8"
-  >
+    class="min-h-full flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
     <form class="max-w-md w-full space-y-8">
       <div class="mt-8 space-y-6">
         <div class="rounded-md shadow-sm -space-y-px">
@@ -64,7 +63,7 @@
           >
             <span class="absolute left-0 inset-y-0 flex items-center pl-3">
             </span>
-            Lisa treening grupp
+            Lisa treeninggrupp
           </button>
         </div>
       </div>
