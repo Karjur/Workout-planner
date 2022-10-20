@@ -6,8 +6,7 @@
                     <li><router-link aria-current="page" class="link" :to="{name: 'Avaleht'}">Avaleht</router-link></li>
                     <li><router-link aria-current="page" class="link" to="/profile-sportsman">Profiil</router-link></li>
                     <li><router-link aria-current="page" class="link" :to="{name: 'Trennid'}">Treeningud</router-link></li>
-                    <li><router-link aria-current="page" class="link" :to="{name: 'Grupid'}">Treeninggrupid</router-link></li>
-                    <li><router-link aria-current="page" class="link" :to="{name: 'Lisa grupp'}">Lisa treeninggrupp</router-link></li>
+                    <li><router-link aria-current="page" class="link" :to="{name: 'Grupid'}">Grupid</router-link></li>
                 </ul>
         </nav>
     </header>
