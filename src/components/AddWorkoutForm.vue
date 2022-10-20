@@ -47,7 +47,31 @@
           </div>
           <div>
             <label for="date">Kuupäev</label>
-            <Datepicker v-model="workout.date"></Datepicker>
+            <Datepicker 
+              v-model="workout.date "
+              format="yyyy/MM/dd"
+              value-format="yyyy-MM-dd">  
+            </Datepicker>
+          </div>
+          <div>
+            <label for="startTime">Algus</label>
+            <input
+              id="startTime"
+              name="startTime"
+              v-model="workout.startTime"
+              class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
+              placeholder="Algus"
+            />
+          </div>
+          <div>
+            <label for="endTime">Lõpp</label>
+            <input
+              id="endTime"
+              name="endTime"
+              v-model="workout.endTime"
+              class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
+              placeholder="Lõpp"
+            />
           </div>
         </div>
 
@@ -75,7 +99,7 @@ import { useRouter } from 'vue-router';
 import Datepicker from '@vuepic/vue-datepicker';
 import '@vuepic/vue-datepicker/dist/main.css'
 
-const workout: Ref<Workout> = ref({ name: '', trainer: '', description: '', location: '', date: '' });
+const workout: Ref<Workout> = ref({ name: '', trainer: '', description: '', location: '', date: '', startTime:'', endTime:'' });
 const { addWorkout } = useWorkoutsStore();
 
 const router = useRouter();

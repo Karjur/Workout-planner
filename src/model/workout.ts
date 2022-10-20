@@ -4,6 +4,8 @@ export interface Workout {
   description: string;
   location: string;
   date: Date;
+  startTime: string;
+  endTime: string;
 }
 
 export interface State {

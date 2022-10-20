@@ -8,6 +8,8 @@
         <Column field="description" header="Kirjeldus" />
         <Column field="location" header="Asukoht" />
         <Column field="date" header="Kuupäev" />
+        <Column field="startTime" header="Algus" />
+        <Column field="endTime" header="Lõpp" />
       </DataTable>
     </div>
   </div>
