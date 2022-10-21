@@ -16,7 +16,6 @@ import "./styles/style.scss";
 import DialogService from 'primevue/dialogservice';
 import ui from "@/components/UI/index";
 
-
 const app = createApp(App);
 
 app.use(createPinia());
@@ -34,3 +33,11 @@ app.component('Column', Column);
 app.component('Datepicker', Datepicker);
 
 app.mount('#app');
+
+export default {
+    // ...
+    components: {
+      Datepicker
+    }
+    // ...
+  }

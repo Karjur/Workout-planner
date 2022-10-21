@@ -90,18 +90,19 @@
   </div>
 </template>
 
+
 <script setup lang="ts">
+
 import { Workout } from '@/model/workout';
 import { useWorkoutsStore } from '@/stores/workoutsStore';
 import { isDate } from 'util/types';
 import { ref, Ref } from 'vue';
 import { useRouter } from 'vue-router';
 import Datepicker from '@vuepic/vue-datepicker';
-import '@vuepic/vue-datepicker/dist/main.css'
+import '@vuepic/vue-datepicker/dist/main.css';
 
 const workout: Ref<Workout> = ref({ name: '', trainer: '', description: '', location: '', date: '', startTime:'', endTime:'' });
 const { addWorkout } = useWorkoutsStore();
-
 const router = useRouter();
 
 const submitForm = () => {
