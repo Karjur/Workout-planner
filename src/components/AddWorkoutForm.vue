@@ -47,7 +47,11 @@
           </div>
           <div>
             <label for="date">Kuupäev</label>
-            <DateComponent/>
+            <Datepicker
+               v-model="workout.date"
+               format="yyyy/MM/dd"
+               value-format="yyyy-MM-dd">
+            </Datepicker>
           </div>
           <div>
             <label for="startTime">Algus</label>
