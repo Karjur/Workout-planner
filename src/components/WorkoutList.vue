@@ -12,6 +12,8 @@
         <Column field="endTime" header="Lõpp" />
       </DataTable>
     </div>
+    <br>
+    <a class="btn btn-primary" align-right href = "newworkout" :to="{name: 'Lisa trenn'}" role="button">Lisa trenn</a>
   </div>
 </template>
 
