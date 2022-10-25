@@ -3,7 +3,6 @@ export interface Workout {
   trainer: string;
   description: string;
   location: string;
-  date: Date;
   startTime: string;
   endTime: string;
 }
