@@ -1,8 +1,5 @@
 <template>
-  <div class="text-right mb-3">    
- <button a class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" align-right href = "newgroup" :to="{name: 'Lisa grupp'}" role="button">
-  Lisa grupp
-</button>
+  <div class="text-right mb-3">
 </div>
 <!-- Modal -->
 <div class="text-right mb-3">  
