@@ -14,7 +14,7 @@ import './assets/global.css'
 import router from './router';
 import "./styles/style.scss";
 import DialogService from 'primevue/dialogservice';
-import ui from "@/components/UI/index";
+import ui from "./components/UI/index";
 
 const app = createApp(App);
 
