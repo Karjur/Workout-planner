@@ -1,7 +1,13 @@
 <template>
   <div class="bg-gray-50 py-12 px-4 sm:px-6 lg:px-8 text-dark-300">
     <div class="text-center bg-gray-50">
-      <h1 class="font-bold">{{ title }}</h1>
+      <h1 class="font-bold">{{ title }}
+        <div class="text-right mb-3">
+        <button  a class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" align-right href = "newworkout" :to="{name: 'Lisa trenn'}" role="button">
+          Lisa trenn
+         </button>
+        </div> 
+      </h1>
       <DataTable :value="workouts">
         <Column field="name" header="Nimi" />
         <Column field="trainer" header="Treener" />
@@ -11,10 +17,6 @@
         <Column field="endTime" header="Lõpp" />
       </DataTable>
     </div>
-    <br>
-  <button a class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" align-right href = "newworkout" :to="{name: 'Lisa trenn'}" role="button">
-  Lisa trenn
-</button>
   </div>
 </template>
 
