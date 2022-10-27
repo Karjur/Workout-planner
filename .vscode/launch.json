@@ -10,14 +10,15 @@
             "request": "launch",
             "preLaunchTask": "build",
             // If you have changed target frameworks, make sure to update the program path.
-            "program": "${workspaceFolder}/itb2203-2022-projekt-app/BackEnd/bin/Debug/net6.0/WorkoutApplication.dll",
+            "program": "${workspaceFolder}/BackEnd/bin/Debug/net6.0/SPORTLYZ.dll",
             "args": [],
-            "cwd": "${workspaceFolder}/itb2203-2022-projekt-app/BackEnd",
+            "cwd": "${workspaceFolder}",
             "stopAtEntry": false,
             // Enable launching a web browser when ASP.NET Core starts. For more information: https://aka.ms/VSCode-CS-LaunchJson-WebBrowser
             "serverReadyAction": {
                 "action": "openExternally",
-                "pattern": "\\bNow listening on:\\s+(https?://\\S+)"
+                "pattern": "\\bNow listening on:\\s+(https?://\\S+)",
+                "uriFormat": "%s/swagger"
             },
             "env": {
                 "ASPNETCORE_ENVIRONMENT": "Development"
