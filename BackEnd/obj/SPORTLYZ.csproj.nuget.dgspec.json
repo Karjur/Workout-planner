@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\karlk\\Sportlyz\\BackEnd\\SPORTLYZ.csproj": {}
+    "C:\\Users\\karlk\\Sportlyz\\itb2203-2022-sportlyz\\BackEnd\\SPORTLYZ.csproj": {}
   },
   "projects": {
-    "C:\\Users\\karlk\\Sportlyz\\BackEnd\\SPORTLYZ.csproj": {
+    "C:\\Users\\karlk\\Sportlyz\\itb2203-2022-sportlyz\\BackEnd\\SPORTLYZ.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\karlk\\Sportlyz\\BackEnd\\SPORTLYZ.csproj",
+        "projectUniqueName": "C:\\Users\\karlk\\Sportlyz\\itb2203-2022-sportlyz\\BackEnd\\SPORTLYZ.csproj",
         "projectName": "SPORTLYZ",
-        "projectPath": "C:\\Users\\karlk\\Sportlyz\\BackEnd\\SPORTLYZ.csproj",
+        "projectPath": "C:\\Users\\karlk\\Sportlyz\\itb2203-2022-sportlyz\\BackEnd\\SPORTLYZ.csproj",
         "packagesPath": "C:\\Users\\karlk\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\karlk\\Sportlyz\\BackEnd\\obj\\",
+        "outputPath": "C:\\Users\\karlk\\Sportlyz\\itb2203-2022-sportlyz\\BackEnd\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\karlk\\AppData\\Roaming\\NuGet\\NuGet.Config",

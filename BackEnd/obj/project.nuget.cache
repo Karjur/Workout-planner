@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ha77wdrsJrMnT9TETDqcUyiWGozaRqTUiLeUkT9V6uAncz3NPHFplSK2Z1RfNOkfzt+orC5/cFGTHQa6hRe0vw==",
+  "dgSpecHash": "JH40+UNdrqaeF8bpN8GFyFx5UFNM7Jf7svouzCoScgtWFf1fhi0azc3O6RpBnKhSveta+UjYW/8n4c9T6HU2dw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\karlk\\Sportlyz\\BackEnd\\SPORTLYZ.csproj",
+  "projectFilePath": "C:\\Users\\karlk\\Sportlyz\\itb2203-2022-sportlyz\\BackEnd\\SPORTLYZ.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\karlk\\.nuget\\packages\\microsoft.entityframeworkcore\\6.0.10\\microsoft.entityframeworkcore.6.0.10.nupkg.sha512",
     "C:\\Users\\karlk\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\6.0.10\\microsoft.entityframeworkcore.abstractions.6.0.10.nupkg.sha512",
