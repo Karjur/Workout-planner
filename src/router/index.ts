@@ -1,10 +1,21 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router';
 import WorkoutsVue from '@/views/Workouts.vue';
 import AddWorkoutVue from '@/views/AddWorkout.vue';
+import SportlyzMainVue from '@/views/SportlyzMain.vue';
+import GroupsVue from '@/views/Groups.vue';
+import AddGroupVue from '@/views/AddGroup.vue';
+import ProfileSprtman from '@/views/ProfileSportman.vue';
+
 
 const routes: Array<RouteRecordRaw> = [
   {
     path: '/',
+    name: 'Avaleht',
+    component: SportlyzMainVue,
+    props: { title: 'Avaleht'},
+  },
+  {
+    path: '/trainings',
     name: 'Trennid',
     component: WorkoutsVue,
     props: { title: 'Trennid' },
@@ -13,6 +24,21 @@ const routes: Array<RouteRecordRaw> = [
     path: '/newworkout',
     name: 'Lisa trenn',
     component: AddWorkoutVue,
+  },
+  {
+    path: '/groups',
+    name: 'Grupid',
+    component: GroupsVue,
+    props: { title: 'Grupid' },
+  },
+  {
+    path: '/profile-sportsman',
+    component: ProfileSprtman,
+  },
+  {
+    path: '/newgroup',
+    name: 'Lisa grupp',
+    component: AddGroupVue,
   },
 ];
 

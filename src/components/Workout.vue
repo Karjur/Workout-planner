@@ -1,5 +1,5 @@
 <template>
-  <div>{{ workout.name }}: {{ workout.trainer }} : {{ workout.description }}: {{ workout.location }}: {{ workout.date }}</div>
+  <div>{{ workout.name }}: {{ workout.trainer }} : {{ workout.description }}: {{ workout.location }}: {{workout.startTime}}: {{workout.endTime}}</div>
 </template>
 
 <script setup lang="ts">
