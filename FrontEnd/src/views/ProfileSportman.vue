@@ -119,7 +119,7 @@ export default defineComponent({
             height: 1.83,
             weight: 100,
             name: "Dinoel",
-            surname: "Pirnpuu"
+            surname: "Vodimed"
         });
 
         const editUserData = ref<IUserData>({
@@ -128,7 +128,7 @@ export default defineComponent({
             height: 1.83,
             weight: 100,
             name: "Dinoel",
-            surname: "Pirnpuu"
+            surname: "Vodimed"
         });
         
         const closeElem = ref();

@@ -21,6 +21,13 @@ export const useGroupsStore = defineStore('groupsStore', () => {
     }
   };
 
-  return { groups, addGroup, editGroup};
+  const removeGroup = (groupId: number) => {
+    const removeGroupIdx = groups.value.findIndex(g => g.id === groupId);
+    if(removeGroupIdx >= 0) {
+      groups.value.splice(removeGroupIdx, 1);
+    } 
+  };
+
+  return { groups, addGroup, editGroup, removeGroup};
 });
 

@@ -20,6 +20,9 @@
               <button class="p-row-editor-init p-link" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" 
                 @click="(e) => setEditGroup(slotProps.data)" ><span class="p-row-editor-init-icon pi pi-fw pi-pencil"></span>
               </button>
+              <button class="p-row-editor-init p-link" type="button"
+                @click="(e) => removeGroup(slotProps.data)" ><span class="p-row-editor-init-icon pi pi-fw pi-trash"></span>
+              </button>
             </template>
           </Column>
         </DataTable>
@@ -28,22 +31,41 @@
     <GroupModal :editGroup="editGroup" @close="close"/>
 </template>
   
-<script setup lang="ts">
+<script lang="ts">
 import { Group } from '@/model/group';
 import { useGroupsStore } from '@/stores/groupsStore';
-import { ref } from 'vue';
+import { defineComponent, ref } from 'vue';
 import GroupModal from './GroupModal.vue';
 
 
-defineProps<{ title: string }>();
-const { groups} = useGroupsStore();
-const editGroup = ref<Group | null>(null);
+export default defineComponent({
+  props: {
+    title: String
+  },
+  setup() {
+      const { groups, removeGroup: removeGroupMethod} = useGroupsStore();
+      const editGroup = ref<Group | null>(null);
 
-const setEditGroup =  (data: Group) => {
-  editGroup.value = {...data};
-};
+      const setEditGroup =  (data: Group) => {
+        editGroup.value = {...data};
+      };
 
-const close = () => {
-  editGroup.value = null;
-};
+     
+
+      const close = () => {
+        editGroup.value = null;
+      };
+      return {close, setEditGroup,groups,editGroup,removeGroupMethod};
+  },
+  methods: {
+    removeGroup(group: Group) {
+        const okRemove = confirm(`Do you really want to remove group ${group.name}?`);
+        if(okRemove) {
+          this.removeGroupMethod(group.id);
+          this.$forceUpdate();
+        }
+      }
+  },
+  components: {GroupModal}
+});
 </script>

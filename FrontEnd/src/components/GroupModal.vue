@@ -46,12 +46,12 @@ import { useGroupsStore } from '@/stores/groupsStore';
 import { defineComponent, Ref, ref, PropType  } from 'vue';
 
 const emptyGroup = {
-                    id: 0,
-                    name: '',
-                    coachName: '',
-                    status: 'Avatud',
-                    nrOfParticipants: 0,
-                };
+    id: 0,
+    name: '',
+    coachName: '',
+    status: 'Avatud',
+    nrOfParticipants: 0,
+};
 
 export default defineComponent({
     data: () => ({
