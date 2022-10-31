@@ -118,8 +118,8 @@ export default defineComponent({
             DoB: defaultDoB,
             height: 1.83,
             weight: 100,
-            name: "Dinoel",
-            surname: "Vodimed"
+            name: "Mati",
+            surname: "Pirnpuu"
         });
 
         const editUserData = ref<IUserData>({
@@ -127,8 +127,8 @@ export default defineComponent({
             DoB: defaultDoB,
             height: 1.83,
             weight: 100,
-            name: "Dinoel",
-            surname: "Vodimed"
+            name: "Mati",
+            surname: "Pirnpuu"
         });
         
         const closeElem = ref();
