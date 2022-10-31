@@ -5,7 +5,7 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h1 class="modal-title fs-5" id="exampleModalLabel">Lisa grupp</h1>
+        <h1 class="modal-title fs-5" id="exampleModalLabel">{{ isEdit ? "Edit Group" : "Lisa Grupp"}}</h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
@@ -31,8 +31,8 @@
         </div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Katkesta</button>
-        <button type="button" class="btn btn-primary" @click="submitForm">Lisa grupp</button>
+        <button type="button" class="btn btn-secondary" id="close-modal" data-bs-dismiss="modal">Katkesta</button>
+        <button type="button" class="btn btn-primary" @click="submitForm">{{ isEdit ? "Edit Group" : "Lisa Grupp"}}</button>
       </div>
     </div>
   </div>
@@ -70,19 +70,20 @@ export default defineComponent({
             group.value = props.editGroup;
         }
         
-        const {addGroup} = useGroupsStore();
+        const {addGroup, editGroup: editGroupMethod} = useGroupsStore();
 
-
-
-
-        return {group,addGroup, close};
+        return {group, addGroup, editGroupMethod, close};
     },
     methods: {
         submitForm() {
             if(this.isEdit) {
+                this.editGroupMethod({ ...this.group });
+                this.group = emptyGroup;
+            } else {
                 this.addGroup({ ...this.group });
                 this.group = emptyGroup;
             }
+            document.querySelector('#close-modal')?.click();
         },
         closeModal(e: any) {
             e.stopPropagation();
