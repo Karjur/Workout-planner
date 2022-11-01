@@ -1,4 +1,5 @@
 export interface Workout {
+  id: number;
   name: string;
   trainer: string;
   description: string;
@@ -8,6 +9,6 @@ export interface Workout {
   endTime: string;
 }
 
-export interface State {
-  workouts: Workout[];
-}
+// export interface State {
+//   workouts: Workout[];
+// }

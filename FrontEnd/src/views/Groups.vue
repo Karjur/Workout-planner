@@ -3,9 +3,8 @@
 </template>
   
 <script setup lang="ts">
+
 import GroupList from '@/components/GroupList.vue';
 
-
-  
-  </script>
+</script>
  
