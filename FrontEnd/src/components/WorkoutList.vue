@@ -5,7 +5,7 @@
          <button  
             a class="btn btn-primary" style="float: right;" data-bs-toggle="modal" data-bs-target="#exampleModal" 
             align-right href = "newworkout" :to="{name: 'Lisa trenn'}" role="button">
-            Lisa trenn
+            Lisa trenn 
          </button>
       </h1>
       <p v-if="workouts.length === 0">Tühi</p>
@@ -15,7 +15,16 @@
         <Column field="description" header="Kirjeldus" />
         <Column field="location" header="Asukoht" />
         <Column field="date" header="Kuupäev" />
-        <Column field="startTime" header="Algus" />
+        <Column field="Algus">
+        <template #body="dadyBody">
+          <span v-if="typeof(dadyBody.data.startTime) == 'string'">
+            {{dadyBody.data.startTime}}
+          </span>
+          <span v-else>
+            {{dadyBody.data.startTime.hours}}:{{dadyBody.data.startTime.minutes}}
+          </span>
+        </template>
+        </Column>
         <Column field="endTime" header="Lõpp" />
       </DataTable>
     </div>

@@ -4,6 +4,7 @@ import AddWorkoutVue from '@/views/AddWorkout.vue';
 import SportlyzMainVue from '@/views/SportlyzMain.vue';
 import GroupsVue from '@/views/Groups.vue';
 import AddGroupVue from '@/views/AddGroup.vue';
+import AuthPageVue from '@/views/AuthPage.vue';
 import ProfileSprtman from '@/views/ProfileSportman.vue';
 
 
@@ -39,6 +40,11 @@ const routes: Array<RouteRecordRaw> = [
     path: '/newgroup',
     name: 'Lisa grupp',
     component: AddGroupVue,
+  },
+  {
+    path: '/auth',
+    name: 'Login',
+    component: AuthPageVue,
   },
 ];
 
