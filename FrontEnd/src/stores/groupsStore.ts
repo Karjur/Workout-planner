@@ -1,10 +1,51 @@
+import useApi, { useApiRawRequest } from '@/modules/api';
 import { Group } from '@/model/group';
 import { defineStore } from 'pinia';
 import { ref } from 'vue';
 
 export const useGroupsStore = defineStore('groupsStore', () => {
+  const apiGetGroups = useApi<Group[]>('groups');
+  let allGroups: Group[] = [];
+  let certainGroup: Group | undefined = undefined;
+ // let groups = ref<Group[]>([]);
+  let group = ref<Group>();
+
+  const loadGroups = async () => {
+    await apiGetGroups.request();
+
+    if (apiGetGroups.response.value) {
+      return apiGetGroups.response.value!;
+    }
+
+    return [];
+  };
+
+  const loadById = async (id: string) => {
+    const url = `groups/${id}`;
+    const getGroupByIdRequest = useApi<Group>(url);
+
+    await getGroupByIdRequest.request();
+    
+    if (getGroupByIdRequest.response.value) {
+      return getGroupByIdRequest.response.value!;
+    }
+
+    return undefined;
+  };
+
+  const load = async (id: string | undefined) => {
+    if (id){
+      certainGroup = await loadById(id);
+      group.value = certainGroup;
+    }else{
+      allGroups = await loadGroups();
+      groups.value = allGroups;
+    }
+  };
+
+
   const groups = ref<Group[]>([
-    { id: 0, name: 'Jalgpall', coachName: 'Mati', status: 'Avatud', nrOfParticipants: 15 },
+    { id: 0, name: 'Jalgpall', coachName: 'Kevin', status: 'Avatud', nrOfParticipants: 15 },
     { id: 1, name: 'Korvpall', coachName: 'Kati', status: 'Kinnine', nrOfParticipants: 10},
   ]);
 
@@ -28,6 +69,6 @@ export const useGroupsStore = defineStore('groupsStore', () => {
     } 
   };
 
-  return { groups, addGroup, editGroup, removeGroup};
+  return { groups, group, load, addGroup, editGroup, removeGroup};
 });
 

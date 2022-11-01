@@ -5,6 +5,6 @@ export interface Group {
     status: string;
     nrOfParticipants: number
 }
-//export interface State {
-  //  groups: Group[];
-  //}
+export interface State {
+    groups: Group[];
+}

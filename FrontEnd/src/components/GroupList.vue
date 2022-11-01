@@ -64,8 +64,11 @@ export default defineComponent({
           this.removeGroupMethod(group.id);
           this.$forceUpdate();
         }
-      }
+      },
+      
   },
   components: {GroupModal}
 });
+
+
 </script>
