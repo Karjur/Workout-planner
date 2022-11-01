@@ -7,6 +7,7 @@
                     <li><router-link aria-current="page" class="link" to="/profile-sportsman">Profiil</router-link></li>
                     <li><router-link aria-current="page" class="link" :to="{name: 'Trennid'}">Treeningud</router-link></li>
                     <li><router-link aria-current="page" class="link" :to="{name: 'Grupid'}">Grupid</router-link></li>
+                    <li><router-link aria-current="page" class="link" :to="{name: 'Login'}">Login</router-link></li>
                 </ul>
         </nav>
     </header>
