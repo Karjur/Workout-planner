@@ -4,8 +4,8 @@ import { ref } from 'vue';
 
 export const useWorkoutsStore = defineStore('exercisesStore', () => {
   const workouts = ref<Workout[]>([
-    { id: 0, name: 'Jalgpall', trainer: 'Kalle', description: 'Kirjeldus', location: 'Tallinn', date: '2022, 11, 3', startTime: '18:00', endTime:'19:30'},
-    { id: 1, name: 'Võrkpall', trainer: 'Pille', description: 'Kirjeldus', location: 'Tallinn', date: '2022, 11, 3',startTime: '18:00', endTime:'19:30'},
+    { id: 0, name: 'Jalgpall', trainer: 'Kalle', description: 'Kirjeldus', location: 'Tallinn', date: '03/11/2022', startTime: '18:00', endTime:'19:30'},
+    { id: 1, name: 'Võrkpall', trainer: 'Pille', description: 'Kirjeldus', location: 'Tallinn', date: '02/01/2021',startTime: '18:00', endTime:'19:30'},
   ]);
 
   const addWorkout = (workout: Workout) => {

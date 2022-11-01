@@ -102,24 +102,4 @@ import DateComponent from './DateComponent.vue';
 import Datepicker from '@vuepic/vue-datepicker';
 import '@vuepic/vue-datepicker/dist/main.css';
 
-const workout: Ref<Workout> = ref({
-  name: '',
-  trainer: '',
-  description: '',
-  location: '',
-  date: '',
-  startTime: '',
-  endTime: '',
-});
-const { addWorkout } = useWorkoutsStore();
-const router = useRouter();
-
-const submitForm = () => {
-  addWorkout({ ...workout.value });
-
-  workout.value.name = '';
-  workout.value.description = '';
-
-  router.push({ name: 'Trennid' });
-};
 </script>

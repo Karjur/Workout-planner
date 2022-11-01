@@ -75,7 +75,7 @@
               >
               <Datepicker
                 v-model="workout.date"
-                format="MM/dd/yyyy"
+                format="dd/MM/yyyy"
                 Datepicker
               />
             </div>
@@ -116,8 +116,10 @@
   
 import WorkoutList from '@/components/WorkoutList.vue';
 import Datepicker from '@vuepic/vue-datepicker';
-
+import {useWorkoutsStore} from '@/stores/workoutsStore';
 import { useRouter } from 'vue-router';
+import { ref, Ref } from 'vue';
+import { Workout } from '@/model/workout';
 
 const workout: Ref<Workout> = ref({
   name: '',
@@ -133,14 +135,23 @@ const { addWorkout } = useWorkoutsStore();
 const router = useRouter();
 
 const submitForm = () => {
+const dt = new Date(workout.value.date);
+ //workout.value.date = dt.toDateString();
+ workout.value.date = dt.toLocaleDateString();
+   const t1 = workout.value.startTime;
+   workout.value.startTime = t1.hours + ':' + t1.minutes;
+   const t2 = workout.value.endTime;
+   workout.value.endTime = t2.hours + ':' + t2.minutes;
+
   addWorkout({ ...workout.value });
   workout.value.name = '';
   workout.value.trainer = '';
   workout.value.description = '';
+  workout.value.date = '';
   workout.value.location = '';
   workout.value.startTime = '';
   workout.value.endTime = '';
   router.push({ name: 'Workouts' });
-};
+}
 </script>
    

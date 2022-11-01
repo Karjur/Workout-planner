@@ -15,27 +15,8 @@
         <Column field="description" header="Kirjeldus" />
         <Column field="location" header="Asukoht" />
         <Column field="date" header="Kuupäev" />
-        <Column field="Algus">
-        <template #body="dadyBody">
-          <span v-if="typeof(dadyBody.data.startTime) == 'string'">
-            {{dadyBody.data.startTime}}
-          </span>
-          <span v-else>
-            {{dadyBody.data.startTime.hours}}:{{dadyBody.data.startTime.minutes}}
-          </span>
-        </template>
-        </Column>
         <Column field="endTime" header="Lõpp" />
-        <Column style="width:10%; min-width:8rem" bodyStyle="text-align:center">
-            <template  #body="slotProps">
-              <button class="p-row-editor-init p-link" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" 
-                @click="(e) => setEditWorkout(slotProps.data)" ><span class="p-row-editor-init-icon pi pi-fw pi-pencil"></span>
-              </button>
-              <button class="p-row-editor-init p-link" type="button"
-                @click="(e) => removeWorkout(slotProps.data)" ><span class="p-row-editor-init-icon pi pi-fw pi-trash"></span>
-              </button>
-            </template>
-          </Column>
+        <Column field="startTime" header="Algus" />
         </DataTable>
       </div>
     </div>
