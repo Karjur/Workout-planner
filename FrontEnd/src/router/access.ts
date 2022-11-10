@@ -9,10 +9,6 @@ export const publicPaths: IPageData[]  = [
 
 export const privatePaths: IPageData[]  = [
     {
-        name: "Avaleht",
-        path: "/"
-    },
-    {
         path: '/trainings',
         name: 'Trennid'
     },
@@ -21,7 +17,7 @@ export const privatePaths: IPageData[]  = [
         name: 'Grupid'
     },
     {
-        path: '/profile-sportsman',
+        path: '/profile',
         name: 'Profile'
     },
 ];

@@ -37,7 +37,7 @@ const routes: Array<RouteRecordRaw> = [
     props: { title: 'Grupid' },
   },
   {
-    path: '/profile-sportsman',
+    path: '/profile',
     component: ProfileSprtman,
   },
   {
