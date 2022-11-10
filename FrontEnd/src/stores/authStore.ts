@@ -25,6 +25,7 @@ export const useAuthStore = defineStore('authStore', () => {
         navbarPages.value = privatePaths;
         auth.value.isAuth = true;
         auth.value.role = role;
+        localStorage.setItem("user", JSON.stringify(auth.value));
     };
 
     const logout = () => {
@@ -33,7 +34,18 @@ export const useAuthStore = defineStore('authStore', () => {
             isAuth: false,
             role: AppRole.CLIENT
         };
+        localStorage.removeItem("user");
     };
 
-    return {logout, login, auth, navbarPages};
+    const hasPermision = (): boolean => {
+        const localData = localStorage.getItem("user");
+        if(!localData) return false;
+        const localUser = JSON.parse(localData) as IAuth;
+        auth.value = localUser;
+        navbarPages.value = privatePaths;
+        
+        return true;
+    };
+
+    return {hasPermision, logout, login, auth, navbarPages};
 });
