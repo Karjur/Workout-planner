@@ -9,6 +9,12 @@
                     <span class="visually-hidden">Loading...</span>
                 </div>
             </div>
+            <div class="col-9" v-if="isReg">
+                <div class="form-check form-switch">
+                    <input class="form-check-input" type="checkbox" :checked="regAsClient" @change="() => regAsClient = !regAsClient">
+                    <label class="form-check-label" for="flexSwitchCheckDefault">Registrate as {{!regAsClient ? "Client" : "Master"}}</label>
+                </div>
+            </div>
             <div class="mb-3 row">
                 <label for="staticEmail" class="col-sm-2 col-form-label">Email</label>
                 <div class="col-sm-10">
@@ -42,7 +48,8 @@
 
     export default defineComponent({
         data: () => ({
-            isReg: false
+            isReg: false,
+            regAsClient: false
         }),
         setup() {
             const isLoading = ref<boolean>(false);
