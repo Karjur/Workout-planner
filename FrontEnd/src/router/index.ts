@@ -4,7 +4,7 @@ import AddWorkoutVue from '@/views/AddWorkout.vue';
 import SportlyzMainVue from '@/views/SportlyzMain.vue';
 import GroupsVue from '@/views/Groups.vue';
 import AddGroupVue from '@/views/AddGroup.vue';
-import AuthPageVue from '@/views/AuthPage.vue';
+import AuthPageVue from '@/components/AuthForm.vue';
 import ProfileSprtman from '@/views/ProfileSportman.vue';
 
 

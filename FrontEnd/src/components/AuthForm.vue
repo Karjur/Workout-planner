@@ -3,7 +3,7 @@
          <div class="min-h-full flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
             <h1 class="font-bold text-center">{{isReg ? "Registration" : "Authorization"}}</h1>
         </div>
-        <div class="container" style="width: 40%;">
+        <div class="container" style="width: 100%;">
             <div class="text-center mb-4" v-if="isLoading">
                 <div class="spinner-border text-primary">
                     <span class="visually-hidden">Loading...</span>
