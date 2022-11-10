@@ -7,6 +7,10 @@ import AddGroupVue from '@/views/AddGroup.vue';
 import AuthPageVue from '@/components/AuthForm.vue';
 import ProfileSprtman from '@/views/ProfileSportman.vue';
 
+export interface IPageData {
+  path: string;
+  name: string;
+}
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -40,11 +44,6 @@ const routes: Array<RouteRecordRaw> = [
     path: '/newgroup',
     name: 'Lisa grupp',
     component: AddGroupVue,
-  },
-  {
-    path: '/auth',
-    name: 'Login',
-    component: AuthPageVue,
   },
 ];
 

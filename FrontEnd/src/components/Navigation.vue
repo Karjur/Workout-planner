@@ -5,35 +5,12 @@
         <img src="@/assets/sportlyz_logo.png" alt="" />
       </div>
       <ul class="navigation" sm:justify-start>
-        <li>
+        <li v-for="path in paths">
           <router-link
             aria-current="page"
             class="link"
-            :to="{ name: 'Avaleht' }"
-            >Avaleht</router-link
-          >
-        </li>
-        <li>
-          <router-link aria-current="page" class="link" to="/profile-sportsman"
-            >Profiil</router-link
-          >
-        </li>
-        <li>
-          <router-link
-            aria-current="page"
-            class="link"
-            :to="{ name: 'Trennid' }"
-            >Treeningud</router-link
-          >
-        </li>
-        <li>
-          <router-link aria-current="page" class="link" :to="{ name: 'Grupid' }"
-            >Grupid</router-link
-          >
-        </li>
-        <li>
-          <router-link aria-current="page" class="link" :to="{ name: 'Login' }"
-            >Login</router-link
+            :to="path.path"
+            >{{path.name}}</router-link
           >
         </li>
       </ul>
@@ -41,10 +18,20 @@
   </header>
 </template>
 
-<script>
-export default {
+<script lang="ts">
+import { IPageData } from '@/router';
+import { useAuthStore } from '@/stores/authStore';
+import { storeToRefs } from 'pinia';
+import { defineComponent } from 'vue';
+
+export default defineComponent({
   name: 'navigation',
-};
+  setup() {
+    const {navbarPages} = storeToRefs(useAuthStore());
+    console.log(navbarPages);
+    return {paths: navbarPages};
+  }
+});
 </script>
 
 <style lang="scss" scoped>
