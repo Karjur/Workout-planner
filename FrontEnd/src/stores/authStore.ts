@@ -20,5 +20,14 @@ export const useAuthStore = defineStore('authStore', () => {
         isAuth: false,
         role: AppRole.CLIENT
     });
-    return {auth, navbarPages};
+
+    const login = (role: AppRole) => {
+        navbarPages.value = privatePaths;
+        auth.value.isAuth = true;
+        auth.value.role = role;
+        
+
+    };
+
+    return {login, auth, navbarPages};
 });
