@@ -13,6 +13,12 @@
             >{{path.name}}</router-link
           >
         </li>
+        <li v-if="auth.isAuth" @click="logout">
+          <a class="router-link-active router-link-exact-active link">
+            Log out ({{auth.role}})
+          </a>
+        </li>
+
       </ul>
     </nav>
   </header>
@@ -28,9 +34,16 @@ export default defineComponent({
   name: 'navigation',
   setup() {
     const {navbarPages} = storeToRefs(useAuthStore());
-    console.log(navbarPages);
-    return {paths: navbarPages};
-  }
+    const authStore = useAuthStore();
+    const {auth} = storeToRefs(authStore);
+    return {paths: navbarPages, logoutAction: authStore.logout, auth};
+  },
+  methods: {
+    logout() {
+      this.logoutAction();
+      this.$router.push("/");
+    }
+  } 
 });
 </script>
 

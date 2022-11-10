@@ -3,6 +3,7 @@
       <div class="bg-gray-50">
         <h1 class="font-bold text-center">{{ title }}
           <button 
+          v-if="auth.role == AppRole.MASTER"
              a class="btn btn-primary" style="float: right;" data-bs-toggle="modal" data-bs-target="#exampleModal" 
              align-right href = "newgroup" :to="{name: 'Lisa grupp'}" role="button">
              Lisa grupp
@@ -17,12 +18,14 @@
           <Column field="coachName" header="Treener" />
           <Column style="width:10%; min-width:8rem" bodyStyle="text-align:center">
             <template  #body="slotProps">
-              <button class="p-row-editor-init p-link" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" 
-                @click="(e) => setEditGroup(slotProps.data)" ><span class="p-row-editor-init-icon pi pi-fw pi-pencil"></span>
-              </button>
-              <button class="p-row-editor-init p-link" type="button"
-                @click="(e) => removeGroup(slotProps.data)" ><span class="p-row-editor-init-icon pi pi-fw pi-trash"></span>
-              </button>
+              <div class="" v-if="auth.role == AppRole.MASTER">
+                <button class="p-row-editor-init p-link" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" 
+                  @click="(e) => setEditGroup(slotProps.data)" ><span class="p-row-editor-init-icon pi pi-fw pi-pencil"></span>
+                </button>
+                <button class="p-row-editor-init p-link" type="button"
+                  @click="(e) => removeGroup(slotProps.data)" ><span class="p-row-editor-init-icon pi pi-fw pi-trash"></span>
+                </button>
+              </div>
             </template>
           </Column>
         </DataTable>
@@ -33,7 +36,9 @@
   
 <script lang="ts">
 import { Group } from '@/model/group';
+import { useAuthStore, AppRole } from '@/stores/authStore';
 import { useGroupsStore } from '@/stores/groupsStore';
+import { storeToRefs } from 'pinia';
 import { defineComponent, ref } from 'vue';
 import GroupModal from './GroupModal.vue';
 
@@ -50,12 +55,13 @@ export default defineComponent({
         editGroup.value = {...data};
       };
 
-     
+      const authStore = useAuthStore();
+      const {auth} = storeToRefs(authStore);
 
       const close = () => {
         editGroup.value = null;
       };
-      return {close, setEditGroup,groups,editGroup,removeGroupMethod};
+      return {close, setEditGroup, groups, editGroup, removeGroupMethod, auth, AppRole};
   },
   methods: {
     removeGroup(group: Group) {
