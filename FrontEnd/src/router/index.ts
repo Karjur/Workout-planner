@@ -2,8 +2,6 @@ import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router';
 import WorkoutsVue from '@/views/Workouts.vue';
 import SportlyzMainVue from '@/views/SportlyzMain.vue';
 import GroupsVue from '@/views/Groups.vue';
-import AddGroupVue from '@/views/AddGroup.vue';
-import AuthPageVue from '@/components/AuthForm.vue';
 import ProfileSprtman from '@/views/ProfileSportman.vue';
 
 export interface IPageData {
@@ -33,11 +31,6 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: '/profile',
     component: ProfileSprtman,
-  },
-  {
-    path: '/newgroup',
-    name: 'Lisa grupp',
-    component: AddGroupVue,
   },
 ];
 
