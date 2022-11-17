@@ -1,6 +1,5 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router';
 import WorkoutsVue from '@/views/Workouts.vue';
-import AddWorkoutVue from '@/views/AddWorkout.vue';
 import SportlyzMainVue from '@/views/SportlyzMain.vue';
 import GroupsVue from '@/views/Groups.vue';
 import AddGroupVue from '@/views/AddGroup.vue';
@@ -24,11 +23,6 @@ const routes: Array<RouteRecordRaw> = [
     name: 'Trennid',
     component: WorkoutsVue,
     props: { title: 'Trennid' },
-  },
-  {
-    path: '/newworkout',
-    name: 'Lisa trenn',
-    component: AddWorkoutVue,
   },
   {
     path: '/groups',
