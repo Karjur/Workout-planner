@@ -101,5 +101,29 @@ import { useRouter } from 'vue-router';
 import DateComponent from './DateComponent.vue';
 import Datepicker from '@vuepic/vue-datepicker';
 import '@vuepic/vue-datepicker/dist/main.css';
+import { workerData } from 'worker_threads';
+import WorkoutList from './WorkoutList.vue';
+const workout: Ref<Workout> = ref({
+  id: 0,
+  name: '',
+  description: '',
+  trainer: '',
+  location: '',
+  date: '',
+  startTime: '',
+  endTime: '',
+})
 
+const {addWorkout} = useWorkoutsStore();
+const router = useRouter();
+const submitForm = () => {
+  addWorkout({...workout.value});
+  workout.value.name = '';
+  workout.value.description = '';
+  workout.value.trainer = '';
+  workout.value.location = '';
+  workout.value.date = '';
+  workout.value.startTime = '';
+  workout.value.endTime = '';
+}
 </script>

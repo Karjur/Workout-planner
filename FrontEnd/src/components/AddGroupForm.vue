@@ -79,6 +79,7 @@ import { ref, Ref } from 'vue';
 import { useRouter } from 'vue-router';
 
 const group: Ref<Group> = ref({
+  id: 0,
   name: '',
   coachName: '',
   status: 'Avatud',

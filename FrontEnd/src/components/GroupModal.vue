@@ -31,7 +31,7 @@
         </div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" id="close-modal" data-bs-dismiss="modal">Katkesta</button>
+        <button ref="closeBtn" type="button" class="btn btn-secondary" id="close-modal" data-bs-dismiss="modal">Katkesta</button>
         <button type="button" class="btn btn-primary" @click="submitForm">{{ isEdit ? "Edit Group" : "Lisa Grupp"}}</button>
       </div>
     </div>
@@ -43,7 +43,7 @@
 <script lang="ts">
 import { Group } from '@/model/group';
 import { useGroupsStore } from '@/stores/groupsStore';
-import { defineComponent, Ref, ref, PropType  } from 'vue';
+import { defineComponent, ref, PropType, Ref} from 'vue';
 
 const emptyGroup = {
     id: 0,
@@ -55,7 +55,7 @@ const emptyGroup = {
 
 export default defineComponent({
     data: () => ({
-       isEdit: false 
+       isEdit: false
     }),
     props: {
         editGroup: {
@@ -83,7 +83,8 @@ export default defineComponent({
                 this.addGroup({ ...this.group });
                 this.group = emptyGroup;
             }
-            document.querySelector('#close-modal')?.click();
+            const closeBtn = this.$refs.closeBtn as HTMLButtonElement;
+            closeBtn.click();
         },
         closeModal(e: any) {
             e.stopPropagation();
