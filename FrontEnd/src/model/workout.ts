@@ -7,8 +7,8 @@ export interface Workout {
   description: string;
   location: string;
   date: string;
-  startTime: any;
-  endTime: any;
+  startTime: {hours: string; minutes:string;};
+  endTime: {hours: string; minutes:string;};
 }
 
 // export interface State {

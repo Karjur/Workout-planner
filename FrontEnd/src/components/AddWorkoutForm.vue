@@ -6,6 +6,7 @@
       <div class="mt-8 space-y-6">
         <div class="rounded-md shadow-sm -space-y-px">
           <div>
+            Old workout Form
             <label for="name">Nimi</label>
             <input
               id="name"
@@ -112,12 +113,12 @@ const workout: Ref<Workout> = ref({
   date: '',
   startTime: '',
   endTime: '',
-})
+});
 
-const {addWorkout} = useWorkoutsStore();
+const { addWorkout } = useWorkoutsStore();
 const router = useRouter();
 const submitForm = () => {
-  addWorkout({...workout.value});
+  addWorkout({ ...workout.value });
   workout.value.name = '';
   workout.value.description = '';
   workout.value.trainer = '';
@@ -125,5 +126,5 @@ const submitForm = () => {
   workout.value.date = '';
   workout.value.startTime = '';
   workout.value.endTime = '';
-}
+};
 </script>
