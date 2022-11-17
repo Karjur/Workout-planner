@@ -160,7 +160,8 @@
                   this.addWorkout({ ...this.workout });
                   this.workout = emptyWorkout;
               }
-              document.querySelector('#close-modal')?.click();
+              const closeBtn = this.$refs.closeBtn as HTMLButtonElement;
+              closeBtn.click();
           },
           closeModal(e: any) {
               e.stopPropagation();

@@ -122,12 +122,13 @@ import { ref, Ref } from 'vue';
 import { Workout } from '@/model/workout';
 
 const workout: Ref<Workout> = ref({
+  id: 0,
   name: '',
   trainer: '',
   description: '',
   location: '',
   date: '',
-  startTime: '',
+  startTime: "",
   endTime: '',
 });
 const { addWorkout } = useWorkoutsStore();
@@ -139,6 +140,7 @@ const dt = new Date(workout.value.date);
  //workout.value.date = dt.toDateString();
  workout.value.date = dt.toLocaleDateString();
    const t1 = workout.value.startTime;
+   console.log("t1", t1);
    workout.value.startTime = t1.hours + ':' + t1.minutes;
    const t2 = workout.value.endTime;
    workout.value.endTime = t2.hours + ':' + t2.minutes;
