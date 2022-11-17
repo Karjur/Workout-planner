@@ -3,6 +3,7 @@
     <div class="bg-gray-50">
       <h1 class="font-bold text-center">{{ title }}
          <button  
+         v-if="auth.role == AppRole.MASTER"
             a class="btn btn-primary" style="float: right;" data-bs-toggle="modal" data-bs-target="#exampleModal" 
             align-right href = "newworkout" :to="{name: 'Lisa trenn'}" role="button">
             Lisa trenn 
@@ -25,7 +26,9 @@
   
 <script lang="ts">
 import { Workout } from '@/model/workout';
+import { useAuthStore, AppRole } from '@/stores/authStore';
 import { useWorkoutsStore } from '@/stores/workoutsStore';
+import { storeToRefs } from 'pinia';
 import { defineComponent, ref } from 'vue';
 import WorkoutModal from './WorkoutModal.vue';
 
@@ -42,12 +45,13 @@ export default defineComponent({
         editWorkout.value = {...data};
       };
 
-     
+      const authStore = useAuthStore();
+      const {auth} = storeToRefs(authStore);
 
       const close = () => {
         editWorkout.value = null;
       };
-      return {close, setEditWorkout,workouts,editWorkout,removeWorkoutMethod};
+      return {close, setEditWorkout,workouts,editWorkout,removeWorkoutMethod, auth, AppRole};
   },
   methods: {
     removeWorkout(workout: Workout) {

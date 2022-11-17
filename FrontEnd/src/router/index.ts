@@ -4,9 +4,13 @@ import AddWorkoutVue from '@/views/AddWorkout.vue';
 import SportlyzMainVue from '@/views/SportlyzMain.vue';
 import GroupsVue from '@/views/Groups.vue';
 import AddGroupVue from '@/views/AddGroup.vue';
-import AuthPageVue from '@/views/AuthPage.vue';
+import AuthPageVue from '@/components/AuthForm.vue';
 import ProfileSprtman from '@/views/ProfileSportman.vue';
 
+export interface IPageData {
+  path: string;
+  name: string;
+}
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -33,18 +37,13 @@ const routes: Array<RouteRecordRaw> = [
     props: { title: 'Grupid' },
   },
   {
-    path: '/profile-sportsman',
+    path: '/profile',
     component: ProfileSprtman,
   },
   {
     path: '/newgroup',
     name: 'Lisa grupp',
     component: AddGroupVue,
-  },
-  {
-    path: '/auth',
-    name: 'Login',
-    component: AuthPageVue,
   },
 ];
 
