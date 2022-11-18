@@ -139,6 +139,7 @@ const submitForm = () => {
   //workout.value.date = dt.toDateString();
   workout.value.date = dt.toLocaleDateString();
   const t1 = workout.value.startTime;
+  console.log('t1', t1);
   workout.value.startTime = t1.hours + ':' + t1.minutes;
   const t2 = workout.value.endTime;
   workout.value.endTime = t2.hours + ':' + t2.minutes;

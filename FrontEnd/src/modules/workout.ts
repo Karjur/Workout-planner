@@ -1,3 +1,5 @@
+import { TimeHTMLAttributes } from 'vue';
+
 export interface Workout {
   id: number;
   name: string;
@@ -5,8 +7,8 @@ export interface Workout {
   description: string;
   location: string;
   date: string;
-  startTime: string;
-  endTime: string;
+  startTime: any;
+  endTime: any;
 }
 
 export interface State {
