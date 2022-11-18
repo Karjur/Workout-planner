@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\karlk\\Sportlyz\\itb2203-2022-sportlyz\\BackEnd\\SPORTLYZ.csproj": {}
+    "C:\\Users\\karlk\\new_main\\itb2203-2022-sportlyz\\BackEnd\\SPORTLYZ.csproj": {}
   },
   "projects": {
-    "C:\\Users\\karlk\\Sportlyz\\itb2203-2022-sportlyz\\BackEnd\\SPORTLYZ.csproj": {
+    "C:\\Users\\karlk\\new_main\\itb2203-2022-sportlyz\\BackEnd\\SPORTLYZ.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\karlk\\Sportlyz\\itb2203-2022-sportlyz\\BackEnd\\SPORTLYZ.csproj",
+        "projectUniqueName": "C:\\Users\\karlk\\new_main\\itb2203-2022-sportlyz\\BackEnd\\SPORTLYZ.csproj",
         "projectName": "SPORTLYZ",
-        "projectPath": "C:\\Users\\karlk\\Sportlyz\\itb2203-2022-sportlyz\\BackEnd\\SPORTLYZ.csproj",
+        "projectPath": "C:\\Users\\karlk\\new_main\\itb2203-2022-sportlyz\\BackEnd\\SPORTLYZ.csproj",
         "packagesPath": "C:\\Users\\karlk\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\karlk\\Sportlyz\\itb2203-2022-sportlyz\\BackEnd\\obj\\",
+        "outputPath": "C:\\Users\\karlk\\new_main\\itb2203-2022-sportlyz\\BackEnd\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\karlk\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -47,6 +47,10 @@
             "Microsoft.EntityFrameworkCore.InMemory": {
               "target": "Package",
               "version": "[6.0.10, )"
+            },
+            "Microsoft.Extensions.DependencyInjection.Abstractions": {
+              "target": "Package",
+              "version": "[7.0.0, )"
             },
             "Npgsql.EntityFrameworkCore.PostgreSQL": {
               "target": "Package",

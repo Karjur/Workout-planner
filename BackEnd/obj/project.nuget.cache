@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "JH40+UNdrqaeF8bpN8GFyFx5UFNM7Jf7svouzCoScgtWFf1fhi0azc3O6RpBnKhSveta+UjYW/8n4c9T6HU2dw==",
+  "dgSpecHash": "0syusOLPR7Iy4Jfqo4iaj7kVa5sD5TSA3F6LcmADeI6c6m44wXum7KORFxbBNim94bRR25DWmuADn0Vk9Bdrmw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\karlk\\Sportlyz\\itb2203-2022-sportlyz\\BackEnd\\SPORTLYZ.csproj",
+  "projectFilePath": "C:\\Users\\karlk\\new_main\\itb2203-2022-sportlyz\\BackEnd\\SPORTLYZ.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\karlk\\.nuget\\packages\\microsoft.entityframeworkcore\\6.0.10\\microsoft.entityframeworkcore.6.0.10.nupkg.sha512",
     "C:\\Users\\karlk\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\6.0.10\\microsoft.entityframeworkcore.abstractions.6.0.10.nupkg.sha512",
@@ -14,7 +14,7 @@
     "C:\\Users\\karlk\\.nuget\\packages\\microsoft.extensions.caching.memory\\6.0.1\\microsoft.extensions.caching.memory.6.0.1.nupkg.sha512",
     "C:\\Users\\karlk\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\6.0.0\\microsoft.extensions.configuration.abstractions.6.0.0.nupkg.sha512",
     "C:\\Users\\karlk\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\6.0.1\\microsoft.extensions.dependencyinjection.6.0.1.nupkg.sha512",
-    "C:\\Users\\karlk\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\6.0.0\\microsoft.extensions.dependencyinjection.abstractions.6.0.0.nupkg.sha512",
+    "C:\\Users\\karlk\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\7.0.0\\microsoft.extensions.dependencyinjection.abstractions.7.0.0.nupkg.sha512",
     "C:\\Users\\karlk\\.nuget\\packages\\microsoft.extensions.logging\\6.0.0\\microsoft.extensions.logging.6.0.0.nupkg.sha512",
     "C:\\Users\\karlk\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\6.0.0\\microsoft.extensions.logging.abstractions.6.0.0.nupkg.sha512",
     "C:\\Users\\karlk\\.nuget\\packages\\microsoft.extensions.options\\6.0.0\\microsoft.extensions.options.6.0.0.nupkg.sha512",

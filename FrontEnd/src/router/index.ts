@@ -1,20 +1,16 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router';
 import WorkoutsVue from '@/views/Workouts.vue';
+import AddWorkoutVue from '@/views/AddWorkout.vue';
 import SportlyzMainVue from '@/views/SportlyzMain.vue';
-import GroupsVue from '@/views/Groups.vue';
+import AuthPageVue from '@/views/AuthPage.vue';
 import ProfileSprtman from '@/views/ProfileSportman.vue';
-
-export interface IPageData {
-  path: string;
-  name: string;
-}
 
 const routes: Array<RouteRecordRaw> = [
   {
     path: '/',
     name: 'Avaleht',
     component: SportlyzMainVue,
-    props: { title: 'Avaleht'},
+    props: { title: 'Avaleht' },
   },
   {
     path: '/trainings',
@@ -23,14 +19,18 @@ const routes: Array<RouteRecordRaw> = [
     props: { title: 'Trennid' },
   },
   {
-    path: '/groups',
-    name: 'Grupid',
-    component: GroupsVue,
-    props: { title: 'Grupid' },
+    path: '/newworkout',
+    name: 'Lisa trenn',
+    component: AddWorkoutVue,
   },
   {
-    path: '/profile',
+    path: '/profile-sportsman',
     component: ProfileSprtman,
+  },
+  {
+    path: '/auth',
+    name: 'Login',
+    component: AuthPageVue,
   },
 ];
 

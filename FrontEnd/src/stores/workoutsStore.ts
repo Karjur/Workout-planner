@@ -1,32 +1,71 @@
-import { Workout } from '@/model/workout';
+import useApi, { useApiRawRequest } from '@/modules/api';
+import { Workout } from '@/modules/workout';
 import { defineStore } from 'pinia';
 import { ref } from 'vue';
 
-export const useWorkoutsStore = defineStore('exercisesStore', () => {
-  const workouts = ref<Workout[]>([
-    { id: 0, name: 'Jalgpall', trainer: 'Kalle', description: 'Kirjeldus', location: 'Tallinn', date: '03/11/2022', startTime: {hours: "18", minutes: "00"}, endTime:{hours: "19", minutes: "30"}},
-    { id: 1, name: 'Võrkpall', trainer: 'Pille', description: 'Kirjeldus', location: 'Tallinn', date: '02/01/2021',startTime:  {hours: "18", minutes: "00"}, endTime:{hours: "19", minutes: "30"}},
-  ]);
+export const useWorkoutsStore = defineStore('workoutsStore', () => {
+  const apiGetWorkouts = useApi<Workout[]>('workouts');
+  let allWorkouts: Workout[] = [];
+  let workouts = ref<Workout[]>([]);
 
-  const addWorkout = (workout: Workout) => {
-    workout.id = new Date().getTime();
-    workouts.value.push(workout);
-    console.log(workouts.value);
+  const loadWorkouts = async () => {
+    await apiGetWorkouts.request();
+
+    if (apiGetWorkouts.response.value) {
+      return apiGetWorkouts.response.value!;
+    }
+
+    return [];
   };
 
-  const editWorkout = (workout: Workout) => {
-    const editWorkoutIdx = workouts.value.findIndex(w => w.id === workout.id);
-    if(editWorkoutIdx !== -1) {
-      workouts.value[editWorkoutIdx] = workout; 
+  const load = async () => {
+    allWorkouts = await loadWorkouts();
+    workouts.value = allWorkouts;
+  };
+
+  const addWorkout = async (workout: Workout) => {
+    const apiAddWorkout = useApi<Workout>('workouts', {
+      method: 'POST',
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(workout),
+    });
+    await apiAddWorkout.request();
+    if (apiAddWorkout.response.value) {
+      allWorkouts.push(apiAddWorkout.response.value!);
+      workouts.value = allWorkouts;
     }
   };
 
-  const removeWorkout = (workoutId: number) => {
-    const removeWorkoutIdx = workouts.value.findIndex(w => w.id === workoutId);
-    if(removeWorkoutIdx >= 0) {
-      workouts.value.splice(removeWorkoutIdx, 1);
-    } 
+  const deleteWorkout = async (workout: Workout) => {
+    const deleteWorkoutRequest = useApiRawRequest(`workouts/${workout.id}`, {
+      method: 'DELETE',
+    });
+
+    const res = await deleteWorkoutRequest();
+
+    if (res.status === 204) {
+      let id = allWorkouts.indexOf(workout);
+
+      if (id !== -1) {
+        allWorkouts.splice(id, 1);
+      }
+
+      id = allWorkouts.indexOf(workout);
+
+      if (id !== -1) {
+        allWorkouts.splice(id, 1);
+      }
+    }
   };
 
-  return { workouts, addWorkout, editWorkout, removeWorkout};
+  const filterWorkoutsByTitle = (exerciseTitleFilter: string) => {
+    workouts.value = allWorkouts.filter((x) =>
+      x.name.startsWith(exerciseTitleFilter),
+    );
+  };
+
+  return { workouts, addWorkout, deleteWorkout, load, filterWorkoutsByTitle };
 });
