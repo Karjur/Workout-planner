@@ -34,3 +34,39 @@ C:\Users\karlk\new_main\itb2203-2022-sportlyz\BackEnd\obj\Debug\net6.0\refint\SP
 C:\Users\karlk\new_main\itb2203-2022-sportlyz\BackEnd\obj\Debug\net6.0\SPORTLYZ.pdb
 C:\Users\karlk\new_main\itb2203-2022-sportlyz\BackEnd\obj\Debug\net6.0\SPORTLYZ.genruntimeconfig.cache
 C:\Users\karlk\new_main\itb2203-2022-sportlyz\BackEnd\obj\Debug\net6.0\ref\SPORTLYZ.dll
+C:\Users\Polina Volohhonskaja\project\itb2203-2022-sportlyz\BackEnd\bin\Debug\net6.0\appsettings.Development.json
+C:\Users\Polina Volohhonskaja\project\itb2203-2022-sportlyz\BackEnd\bin\Debug\net6.0\appsettings.json
+C:\Users\Polina Volohhonskaja\project\itb2203-2022-sportlyz\BackEnd\bin\Debug\net6.0\Sportlyz.exe
+C:\Users\Polina Volohhonskaja\project\itb2203-2022-sportlyz\BackEnd\bin\Debug\net6.0\Sportlyz.deps.json
+C:\Users\Polina Volohhonskaja\project\itb2203-2022-sportlyz\BackEnd\bin\Debug\net6.0\Sportlyz.runtimeconfig.json
+C:\Users\Polina Volohhonskaja\project\itb2203-2022-sportlyz\BackEnd\bin\Debug\net6.0\Sportlyz.dll
+C:\Users\Polina Volohhonskaja\project\itb2203-2022-sportlyz\BackEnd\bin\Debug\net6.0\Sportlyz.pdb
+C:\Users\Polina Volohhonskaja\project\itb2203-2022-sportlyz\BackEnd\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.dll
+C:\Users\Polina Volohhonskaja\project\itb2203-2022-sportlyz\BackEnd\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\Polina Volohhonskaja\project\itb2203-2022-sportlyz\BackEnd\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.InMemory.dll
+C:\Users\Polina Volohhonskaja\project\itb2203-2022-sportlyz\BackEnd\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\Polina Volohhonskaja\project\itb2203-2022-sportlyz\BackEnd\bin\Debug\net6.0\Microsoft.Extensions.Caching.Memory.dll
+C:\Users\Polina Volohhonskaja\project\itb2203-2022-sportlyz\BackEnd\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\Polina Volohhonskaja\project\itb2203-2022-sportlyz\BackEnd\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\Polina Volohhonskaja\project\itb2203-2022-sportlyz\BackEnd\bin\Debug\net6.0\Microsoft.OpenApi.dll
+C:\Users\Polina Volohhonskaja\project\itb2203-2022-sportlyz\BackEnd\bin\Debug\net6.0\Npgsql.dll
+C:\Users\Polina Volohhonskaja\project\itb2203-2022-sportlyz\BackEnd\bin\Debug\net6.0\Npgsql.EntityFrameworkCore.PostgreSQL.dll
+C:\Users\Polina Volohhonskaja\project\itb2203-2022-sportlyz\BackEnd\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\Polina Volohhonskaja\project\itb2203-2022-sportlyz\BackEnd\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\Polina Volohhonskaja\project\itb2203-2022-sportlyz\BackEnd\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\Polina Volohhonskaja\project\itb2203-2022-sportlyz\BackEnd\obj\Debug\net6.0\Sportlyz.csproj.AssemblyReference.cache
+C:\Users\Polina Volohhonskaja\project\itb2203-2022-sportlyz\BackEnd\obj\Debug\net6.0\Sportlyz.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Polina Volohhonskaja\project\itb2203-2022-sportlyz\BackEnd\obj\Debug\net6.0\Sportlyz.AssemblyInfoInputs.cache
+C:\Users\Polina Volohhonskaja\project\itb2203-2022-sportlyz\BackEnd\obj\Debug\net6.0\Sportlyz.AssemblyInfo.cs
+C:\Users\Polina Volohhonskaja\project\itb2203-2022-sportlyz\BackEnd\obj\Debug\net6.0\Sportlyz.csproj.CoreCompileInputs.cache
+C:\Users\Polina Volohhonskaja\project\itb2203-2022-sportlyz\BackEnd\obj\Debug\net6.0\Sportlyz.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\Polina Volohhonskaja\project\itb2203-2022-sportlyz\BackEnd\obj\Debug\net6.0\Sportlyz.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Polina Volohhonskaja\project\itb2203-2022-sportlyz\BackEnd\obj\Debug\net6.0\staticwebassets.build.json
+C:\Users\Polina Volohhonskaja\project\itb2203-2022-sportlyz\BackEnd\obj\Debug\net6.0\staticwebassets.development.json
+C:\Users\Polina Volohhonskaja\project\itb2203-2022-sportlyz\BackEnd\obj\Debug\net6.0\scopedcss\bundle\Sportlyz.styles.css
+C:\Users\Polina Volohhonskaja\project\itb2203-2022-sportlyz\BackEnd\obj\Debug\net6.0\Sportlyz.csproj.CopyComplete
+C:\Users\Polina Volohhonskaja\project\itb2203-2022-sportlyz\BackEnd\obj\Debug\net6.0\Sportlyz.dll
+C:\Users\Polina Volohhonskaja\project\itb2203-2022-sportlyz\BackEnd\obj\Debug\net6.0\refint\Sportlyz.dll
+C:\Users\Polina Volohhonskaja\project\itb2203-2022-sportlyz\BackEnd\obj\Debug\net6.0\Sportlyz.pdb
+C:\Users\Polina Volohhonskaja\project\itb2203-2022-sportlyz\BackEnd\obj\Debug\net6.0\Sportlyz.genruntimeconfig.cache
+C:\Users\Polina Volohhonskaja\project\itb2203-2022-sportlyz\BackEnd\obj\Debug\net6.0\ref\Sportlyz.dll
