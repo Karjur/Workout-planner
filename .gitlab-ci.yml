@@ -9,7 +9,6 @@ variables:
 
 stages:
   - build
-  - api_test
   - deploy
 build:
   image:
