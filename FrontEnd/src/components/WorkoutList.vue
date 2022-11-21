@@ -31,8 +31,18 @@
         <Column field="description" header="Kirjeldus" />
         <Column field="location" header="Asukoht" />
         <Column field="date" header="Kuupäev" />
-        <Column field="endTime" header="Lõpp" />
         <Column field="startTime" header="Algus" />
+        <Column field="endTime" header="Lõpp" />
+        <Column>
+          <template #body="{ data }">
+            <button
+              class="border bg-red-400 text-red-900 py-0 px-2 border-red-900 font-bold"
+              @click="remove(data)"
+            >
+              X
+            </button>
+          </template>
+        </Column>
       </DataTable>
     </div>
   </div>
@@ -42,7 +52,7 @@
 import { Workout } from '@/modules/workout';
 import { useWorkoutsStore } from '@/stores/workoutsStore';
 import { storeToRefs } from 'pinia';
-import { defineComponent, onMounted, ref, watch } from 'vue';
+import { onMounted, ref, Ref, watch } from 'vue';
 
 defineProps<{ title: string }>();
 
