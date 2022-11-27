@@ -1,9 +1,6 @@
 <template>
     <div class="row bg-gray-50">
-        <div class="col bg-gray-50">
-            <SportlyzForm title="Avaleht" />
-        </div>
-        <div class="col">
+        <div class>
             <AuthForm />
         </div>
     </div>

@@ -3,7 +3,7 @@
          <div class="min-h-full flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
             <h1 class="font-bold text-center">{{isReg ? "Registration" : "Authorization"}}</h1>
         </div>
-        <div class="container" style="width: 100%;">
+        <div class="container" style="width: 35%;">
             <div class="text-center mb-4" v-if="isLoading">
                 <div class="spinner-border text-primary">
                     <span class="visually-hidden">Loading...</span>
@@ -11,20 +11,20 @@
             </div>
             <div class="d-flex mt-1 mb-3">
                 <div class="w-50 text-center">
-                    <button @click="loginClient" class="btn btn-success">
-                        Client
+                    <button @click="loginClient" class="btn btn-primary">
+                        Kasutaja
                     </button>
                 </div>
                 <div class="w-50 text-center">
-                    <button @click="loginMaster " class="btn btn-success">
-                        Master
+                    <button @click="loginMaster " class="btn btn-primary">
+                        Treener
                     </button>
                 </div>
             </div>
             <div class="col-9" v-if="isReg">
                 <div class="form-check form-switch">
                     <input class="form-check-input" type="checkbox" :checked="regAsClient" @change="() => regAsClient = !regAsClient">
-                    <label class="form-check-label" for="flexSwitchCheckDefault">Registrate as {{!regAsClient ? "Client" : "Master"}}</label>
+                    <label class="form-check-label" for="flexSwitchCheckDefault">Registrate as {{!regAsClient ? "Kasutaja" : "Treener"}}</label>
                 </div>
             </div>
             <div class="mb-3 row">
@@ -43,11 +43,11 @@
                 <div class="col-9">
                     <div class="form-check form-switch">
                         <input class="form-check-input" type="checkbox" :checked="isReg" @change="() => isReg = !isReg">
-                        <label class="form-check-label" for="flexSwitchCheckDefault">{{!isReg ? "Registration" : "Login"}}</label>
+                        <label class="form-check-label" for="flexSwitchCheckDefault">{{!isReg ? "Login" : "Registration"}}</label>
                     </div>
                 </div>
                 <div class="col-3 text-end">
-                    <button @click="submitForm" :disabled="!isAvailableSubmit" class="btn btn-success">{{isReg ? "Registrate" : "Login in"}}</button>
+                    <button @click="submitForm" :disabled="!isAvailableSubmit" class="btn btn-primary">{{isReg ? "Registrate" : "Log in"}}</button>
                 </div>
             </div>
         </div>
