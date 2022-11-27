@@ -1,5 +1,6 @@
 import { TimeHTMLAttributes } from "vue";
 
+
 export interface Workout {
   id: number;
   name: string;
