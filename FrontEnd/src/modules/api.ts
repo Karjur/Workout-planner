@@ -23,8 +23,7 @@ export default function useApi<T>(
     const res = await fetch(apiUrl + url, options);
     const data = await res.json();
     response.value = data;
-    console.log(data);
-    console.log(res);
+    console.log("response in api", response.value);
   };
 
   return { response, request };
@@ -32,7 +31,15 @@ export default function useApi<T>(
 
 export function useApiRawRequest(url: RequestInfo, options?: RequestInit) {
   const request: () => Promise<Response> = async () => {
-    return await fetch(apiUrl + url, options);
+    return await fetch(apiUrl + url, {
+      mode: 'cors', // no-cors, *cors, same-origin
+      cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
+      credentials: 'same-origin', // include, *same-origin, omit
+      headers: {
+        'Content-Type': 'application/json'
+      },
+    ...options
+    });
   };
   return request;
 }

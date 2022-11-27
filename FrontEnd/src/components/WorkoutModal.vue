@@ -164,16 +164,17 @@ export default defineComponent({
   methods: {
     async submitForm() {
       if (this.isEdit) {
+        console.log("edit");
         await this.editWorkoutMethod({ ...this.workout });
         this.workout = emptyWorkout;
       } else {
+        console.log("add");
         await this.addWorkout({ ...this.workout });
         this.workout = emptyWorkout;
       }
       const closeBtn = this.$refs.closeBtn as HTMLButtonElement;
       closeBtn.click();
     },
-
     closeModal(e: any) {
       e.stopPropagation();
       if (

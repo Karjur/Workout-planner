@@ -106,3 +106,25 @@ C:\Users\karlk\Sportlyz\itb2203-2022-sportlyz\BackEnd\obj\Debug\net6.0\refint\SP
 C:\Users\karlk\Sportlyz\itb2203-2022-sportlyz\BackEnd\obj\Debug\net6.0\SPORTLYZ.pdb
 C:\Users\karlk\Sportlyz\itb2203-2022-sportlyz\BackEnd\obj\Debug\net6.0\SPORTLYZ.genruntimeconfig.cache
 C:\Users\karlk\Sportlyz\itb2203-2022-sportlyz\BackEnd\obj\Debug\net6.0\ref\SPORTLYZ.dll
+C:\Users\karlk\Sportlyz\itb2203-2022-sportlyz\BackEnd\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\karlk\Sportlyz\itb2203-2022-sportlyz\BackEnd\bin\Debug\net6.0\Microsoft.AspNetCore.Cryptography.Internal.dll
+C:\Users\karlk\Sportlyz\itb2203-2022-sportlyz\BackEnd\bin\Debug\net6.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+C:\Users\karlk\Sportlyz\itb2203-2022-sportlyz\BackEnd\bin\Debug\net6.0\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\karlk\Sportlyz\itb2203-2022-sportlyz\BackEnd\bin\Debug\net6.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\karlk\Sportlyz\itb2203-2022-sportlyz\BackEnd\bin\Debug\net6.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\karlk\Sportlyz\itb2203-2022-sportlyz\BackEnd\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\karlk\Sportlyz\itb2203-2022-sportlyz\BackEnd\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\karlk\Sportlyz\itb2203-2022-sportlyz\BackEnd\bin\Debug\net6.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\karlk\Sportlyz\itb2203-2022-sportlyz\BackEnd\bin\Debug\net6.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\karlk\Sportlyz\itb2203-2022-sportlyz\BackEnd\bin\Debug\net6.0\System.Security.Permissions.dll
+C:\Users\Polina Volohhonskaja\project\itb2203-2022-sportlyz\BackEnd\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\Polina Volohhonskaja\project\itb2203-2022-sportlyz\BackEnd\bin\Debug\net6.0\Microsoft.AspNetCore.Cryptography.Internal.dll
+C:\Users\Polina Volohhonskaja\project\itb2203-2022-sportlyz\BackEnd\bin\Debug\net6.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+C:\Users\Polina Volohhonskaja\project\itb2203-2022-sportlyz\BackEnd\bin\Debug\net6.0\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\Polina Volohhonskaja\project\itb2203-2022-sportlyz\BackEnd\bin\Debug\net6.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\Polina Volohhonskaja\project\itb2203-2022-sportlyz\BackEnd\bin\Debug\net6.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\Polina Volohhonskaja\project\itb2203-2022-sportlyz\BackEnd\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\Polina Volohhonskaja\project\itb2203-2022-sportlyz\BackEnd\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\Polina Volohhonskaja\project\itb2203-2022-sportlyz\BackEnd\bin\Debug\net6.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\Polina Volohhonskaja\project\itb2203-2022-sportlyz\BackEnd\bin\Debug\net6.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\Polina Volohhonskaja\project\itb2203-2022-sportlyz\BackEnd\bin\Debug\net6.0\System.Security.Permissions.dll
