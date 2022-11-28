@@ -2,5 +2,5 @@
 
 body {
   font-family: 'Open Sans';
-  background: lightsteelblue;
+  background-image: url('@/assets/imageback.png');
 }
