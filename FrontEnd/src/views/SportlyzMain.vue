@@ -1,5 +1,5 @@
 <template>
-    <div class="row">
+    <div class="row bg-gray-50">
         <div class>
             <AuthForm />
         </div>

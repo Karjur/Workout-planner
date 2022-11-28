@@ -1,7 +1,7 @@
 <template >
-    <div class="py-12 px-4 sm:px-6 lg:px-8 text-dark-300">
+    <div class="bg-gray-50 py-12 px-4 sm:px-6 lg:px-8 text-dark-300">
         <div class="container">
-            <div class="text-center">
+            <div class="text-center bg-gray-50">
             <h1>Sinu profiil</h1>
             <div class="row mt-5 profile-container p-2">
               
