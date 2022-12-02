@@ -1,51 +1,47 @@
-import { IPageData } from "@/router";
-import { privatePaths, publicPaths } from "@/router/access";
-import { defineStore } from "pinia";
-import { ref } from "vue";
+import useApi from '@/modules/api';
+import { AuthResponse, User } from '@/modules/user';
+import { defineStore } from 'pinia';
+import { computed, ref } from 'vue';
 
-export enum AppRole {
-    MASTER = "MASTER",
-    CLIENT = "CLIENT"
-}
+export const useAuthStore = defineStore('userStore', () => {
+  let user = ref<User | undefined>(undefined);
+  let token = ref<string | undefined>(undefined);
+  const isAuthenticated = computed(() => Boolean(token.value));
 
-export interface IAuth {
-    isAuth: boolean;
-    role: AppRole;
-}
-
-export const useAuthStore = defineStore('authStore', () => {
-    const navbarPages = ref<IPageData[]>(publicPaths); 
-
-    const auth = ref<IAuth>({
-        isAuth: false,
-        role: AppRole.CLIENT
+  const login = async (loginUser: User): Promise<boolean> => {
+    const apiLogin = useApi<AuthResponse>('users/login', {
+      method: 'POST',
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(loginUser),
     });
 
-    const login = (role: AppRole) => {
-        navbarPages.value = privatePaths;
-        auth.value.isAuth = true;
-        auth.value.role = role;
-        localStorage.setItem("user", JSON.stringify(auth.value));
-    };
+    await apiLogin.request();
 
-    const logout = () => {
-        navbarPages.value = publicPaths; 
-        auth.value = {
-            isAuth: false,
-            role: AppRole.CLIENT
-        };
-        localStorage.removeItem("user");
-    };
+    if (apiLogin.response.value && apiLogin.response.value.token) {
+      token.value = apiLogin.response.value.token;
 
-    const hasPermision = (): boolean => {
-        const localData = localStorage.getItem("user");
-        if(!localData) return false;
-        const localUser = JSON.parse(localData) as IAuth;
-        auth.value = localUser;
-        navbarPages.value = privatePaths;
-        
-        return true;
-    };
+      user.value = loginUser;
+      console.log(token);
 
-    return {hasPermision, logout, login, auth, navbarPages};
+      return true;
+    }
+
+    return false;
+  };
+
+  const logout = () => {
+    user.value = undefined;
+    token.value = undefined;
+  };
+
+  return {
+    user,
+    isAuthenticated,
+    token,
+    login,
+    logout,
+  };
 });

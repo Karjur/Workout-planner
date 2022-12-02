@@ -11,7 +11,6 @@ namespace BackEnd.Model
         public DataContext(DbContextOptions<DataContext> options) : base(options) {}
 
         public DbSet<Workout>? WorkoutList { get; set; }
-        public DbSet<Coach>? CoachList { get; set; }
         public DbSet<User>? UserList { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder) {

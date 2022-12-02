@@ -11,7 +11,7 @@ using static BackEnd.Model.Workout;
 
 namespace BackEnd.Controllers
 {
-    // [Authorize]
+    [Authorize]
     [ApiController]
     [Route("api/[controller]")]
     public class WorkoutsController : ControllerBase
@@ -24,14 +24,12 @@ namespace BackEnd.Controllers
 
         [HttpGet]
         public IActionResult GetWorkouts() {
-            var workouts = _context.WorkoutList?.ToArray();
-            return Ok(workouts);
+            return Ok(_context.WorkoutList);
         }
 
         [HttpGet("{id}")]
         public IActionResult GetWorkout(int? id) {
-            // && e.OrganizationId == GetOrganizationId()
-            var workout = _context.WorkoutList!.FirstOrDefault(e => e.Id == id );
+            var workout = _context.WorkoutList!.FirstOrDefault(e => e.Id == id && e.OrganizationId == GetOrganizationId());
             if (workout == null) {
                 return NotFound();
             }
@@ -42,7 +40,7 @@ namespace BackEnd.Controllers
         public IActionResult AddWorkout([FromBody] Workout workout) {
             var dbWorkout = _context.WorkoutList!.Find(workout.Id);
             if (dbWorkout == null) {
-                // workout.OrganizationId = GetOrganizationId();
+                workout.OrganizationId = GetOrganizationId();
                 _context.Add(workout);
                 _context.SaveChanges();
 
@@ -58,16 +56,16 @@ namespace BackEnd.Controllers
                 return NotFound();
             }
 
-            // workout.OrganizationId = GetOrganizationId();
+            workout.OrganizationId = GetOrganizationId();
 
-            // if (workout.OrganizationId != dbWorkout.OrganizationId) {
-            //     return Unauthorized();
-            // }
+            if (workout.OrganizationId != dbWorkout.OrganizationId) {
+                return Unauthorized();
+            }
 
             _context.Update(workout);
             _context.SaveChanges();
 
-            return Ok();
+            return NoContent();
         }
 
         [HttpDelete("{id}")]
@@ -77,9 +75,9 @@ namespace BackEnd.Controllers
                 return NotFound();
             }
 
-            // if (workout.OrganizationId != GetOrganizationId()) {
-            //     return Unauthorized();
-            // }
+            if (workout.OrganizationId != GetOrganizationId()) {
+                return Unauthorized();
+            }
 
             _context.Remove(workout);
             _context.SaveChanges();

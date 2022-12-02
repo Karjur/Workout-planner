@@ -26,7 +26,7 @@ namespace BackEnd.Model
         [Column("end_time")]
         public string? EndTime { get; init; }
         [Column("organization_id")]
-        public int? OrganizationId { get; set; }
+        public int OrganizationId { get; set; }
 
     }
 }
