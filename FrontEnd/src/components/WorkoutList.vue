@@ -49,6 +49,12 @@
               >
                 X
               </button>
+              <router-link
+                class="border bg-blue-400 text-blue-900 py-0 px-2 mx-2 border-red-900 font-bold"
+                :to="'workoutdetails/' + data.id"
+              >
+                Kuva info
+              </router-link>
             </div>
           </template>
         </Column>

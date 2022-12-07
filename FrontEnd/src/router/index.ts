@@ -6,6 +6,7 @@ import AuthPageVue from '@/views/LoginForm.vue';
 import ProfileSprtman from '@/views/ProfileSportman.vue';
 import UpdateWorkoutVue from '@/views/UpdateWorkout.vue';
 import LoginVue from '@/views/Login.vue';
+import WorkoutDetails from '@/views/WorkoutDetails.vue'
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -38,6 +39,10 @@ const routes: Array<RouteRecordRaw> = [
     path: '/login',
     name: 'Logi sisse',
     component: LoginVue,
+  },
+  {
+    path: '/WorkoutDetails',
+    component: WorkoutDetails,
   },
 ];
 
