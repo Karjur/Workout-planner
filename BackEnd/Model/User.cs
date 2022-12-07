@@ -17,9 +17,5 @@ namespace BackEnd.Model
 
         [Column("password")]
         public string Password { get; set; } = "";
-        
-        [Column("organzation_id")]
-        public int OrganizationId { get; set; }
-
     }
 }

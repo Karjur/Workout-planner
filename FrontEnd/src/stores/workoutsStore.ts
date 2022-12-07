@@ -2,18 +2,13 @@ import useApi, { useApiRawRequest } from '@/modules/api';
 import { Workout } from '@/modules/workout';
 import { defineStore } from 'pinia';
 import { ref } from 'vue';
-import { useAuthStore } from './authStore';
 
 export const useWorkoutsStore = defineStore('workoutsStore', () => {
-  const authStore = useAuthStore();
+  const apiGetWorkouts = useApi<Workout[]>('workouts');
   let allWorkouts: Workout[] = [];
   let workouts = ref<Workout[]>([]);
 
   const loadWorkouts = async () => {
-    const apiGetWorkouts = useApi<Workout[]>('workouts', {
-      headers: { Authorization: 'Bearer ' + authStore.token },
-    });
-
     await apiGetWorkouts.request();
 
     if (apiGetWorkouts.response.value) {
@@ -33,11 +28,9 @@ export const useWorkoutsStore = defineStore('workoutsStore', () => {
   };
 
   const addWorkout = async (workout: Workout) => {
-    console.log(authStore.token);
     const apiAddWorkout = useApi<Workout>('workouts', {
       method: 'POST',
       headers: {
-        Authorization: 'Bearer ' + authStore.token,
         Accept: 'application/json',
         'Content-Type': 'application/json',
       },
@@ -54,7 +47,6 @@ export const useWorkoutsStore = defineStore('workoutsStore', () => {
     const apiAddWorkout = useApi<Workout>('workouts/' + workout.id, {
       method: 'PUT',
       headers: {
-        Authorization: 'Bearer ' + authStore.token,
         Accept: 'application/json',
         'Content-Type': 'application/json',
       },
@@ -70,7 +62,6 @@ export const useWorkoutsStore = defineStore('workoutsStore', () => {
   const deleteWorkout = async (workout: Workout) => {
     const deleteWorkoutRequest = useApiRawRequest(`workouts/${workout.id}`, {
       method: 'DELETE',
-      headers: { Authorization: 'Bearer ' + authStore.token },
     });
 
     const res = await deleteWorkoutRequest();

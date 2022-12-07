@@ -61,9 +61,7 @@
           </div>
         </div>
       </form>
-      <p v-if="showError" class="text-red-400">
-        Vigane kasutajanimi või parool
-      </p>
+      <p class="text-red-400">Vigane kasutajanimi või parool</p>
     </div>
   </div>
 </template>
@@ -71,7 +69,6 @@
 <script lang="ts">
 import { defineComponent, ref } from 'vue';
 import { User } from '@/modules/user';
-import { useAuthStore } from '@/stores/authStore';
 import router from '@/router';
 
 export default defineComponent({
@@ -80,18 +77,15 @@ export default defineComponent({
   }),
   setup() {
     const isLoading = ref<boolean>(false);
-    const auth = useAuthStore();
     const user: User = { username: '', password: '' };
 
     let showError = ref(false);
 
     const submit = async () => {
-      showError.value = !(await auth.login(user));
-
       router.push({ name: 'Trennid' });
     };
 
-    return { isLoading, auth, user, submit, showError };
+    return { isLoading, user, submit, showError };
   },
 });
 </script>

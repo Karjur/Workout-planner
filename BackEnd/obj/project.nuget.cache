@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "0aD+OUiB5hfPQQUii9NKjN5ncmhwgkyg2zqgMWuL8ILO3l+xDz2Hv0BVNiJS6ghqTSOP5IpGQ28eHupq+uAmyA==",
+  "dgSpecHash": "7RNkE/GLKIgTEjQSXHyNUe8o1ScznH5ZGCKmv/+lxBS52vEPAPWJciKir0Wj4hiotyX8xNeWj/zxeQjpBEXxYg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\karlk\\Sportlyz\\itb2203-2022-sportlyz\\BackEnd\\SPORTLYZ.csproj",
+  "projectFilePath": "C:\\Users\\karlk\\02.12test\\itb2203-2022-sportlyz\\BackEnd\\SPORTLYZ.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\karlk\\.nuget\\packages\\microsoft.aspnetcore.authentication\\2.2.0\\microsoft.aspnetcore.authentication.2.2.0.nupkg.sha512",
     "C:\\Users\\karlk\\.nuget\\packages\\microsoft.aspnetcore.authentication.abstractions\\2.2.0\\microsoft.aspnetcore.authentication.abstractions.2.2.0.nupkg.sha512",

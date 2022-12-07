@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using BackEnd.Model;
@@ -11,7 +10,6 @@ using static BackEnd.Model.Workout;
 
 namespace BackEnd.Controllers
 {
-    [Authorize]
     [ApiController]
     [Route("api/[controller]")]
     public class WorkoutsController : ControllerBase
@@ -29,7 +27,7 @@ namespace BackEnd.Controllers
 
         [HttpGet("{id}")]
         public IActionResult GetWorkout(int? id) {
-            var workout = _context.WorkoutList!.FirstOrDefault(e => e.Id == id && e.OrganizationId == GetOrganizationId());
+            var workout = _context.WorkoutList!.Find(id);
             if (workout == null) {
                 return NotFound();
             }
@@ -40,7 +38,6 @@ namespace BackEnd.Controllers
         public IActionResult AddWorkout([FromBody] Workout workout) {
             var dbWorkout = _context.WorkoutList!.Find(workout.Id);
             if (dbWorkout == null) {
-                workout.OrganizationId = GetOrganizationId();
                 _context.Add(workout);
                 _context.SaveChanges();
 
@@ -56,12 +53,6 @@ namespace BackEnd.Controllers
                 return NotFound();
             }
 
-            workout.OrganizationId = GetOrganizationId();
-
-            if (workout.OrganizationId != dbWorkout.OrganizationId) {
-                return Unauthorized();
-            }
-
             _context.Update(workout);
             _context.SaveChanges();
 
@@ -75,19 +66,10 @@ namespace BackEnd.Controllers
                 return NotFound();
             }
 
-            if (workout.OrganizationId != GetOrganizationId()) {
-                return Unauthorized();
-            }
-
             _context.Remove(workout);
             _context.SaveChanges();
 
             return NoContent();
-        }
-
-        private int GetOrganizationId() {
-            var identity = HttpContext.User.Identity as ClaimsIdentity;
-            return int.Parse(identity!.FindFirst("organizationId")!.Value);
         }
 
     }
