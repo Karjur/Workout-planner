@@ -49,7 +49,14 @@
           bodyStyle="text-align:center"
         >
           <template #body="slotProps">
-              <button
+            <button
+                class="p-row-editor-init p-link"
+                type="button"
+                @click="async (e) =>  goToWorkoudDetails(slotProps.data)"
+              >
+                <span class="p-row-editor-init-icon pi pi-fw pi-pencil"></span>
+              </button>     
+            <button
                 class="p-row-editor-init p-link"
                 type="button"
                 data-bs-toggle="modal"
@@ -122,6 +129,9 @@ export default defineComponent({
     this.loadWorkouts();
   },
   methods: {
+    goToWorkoudDetails(data: Workout) {
+      this.$router.push(`/trainings/${data.id}`);
+    },
     async removeWorkout(workout: Workout) {
       const okRemove = confirm(
         `Do you really want to remove workout ${workout.name}?`,
