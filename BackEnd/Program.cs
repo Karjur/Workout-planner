@@ -26,7 +26,10 @@ builder.Services.AddCors(o => o.AddPolicy("MyPolicy", builder => {
 var app = builder.Build();
 
 using (var scope = ((IApplicationBuilder)app).ApplicationServices.GetRequiredService<IServiceScopeFactory>().CreateScope())
-using (var context = scope.ServiceProvider.GetService<DataContext>()) context?.Database.EnsureCreated();
+using (var context = scope.ServiceProvider.GetService<DataContext>()) {
+    context?.Database.EnsureDeleted();
+    context?.Database.EnsureCreated();
+}
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment()) {

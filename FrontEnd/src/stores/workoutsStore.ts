@@ -4,96 +4,89 @@ import { defineStore } from 'pinia';
 import { ref } from 'vue';
 
 export const useWorkoutsStore = defineStore('workoutsStore', () => {
-  const apiGetWorkouts = useApi<Workout[]>('workouts');
-  let allWorkouts: Workout[] = [];
-  let workouts = ref<Workout[]>([]);
+  const workouts = ref<Workout[]>([]);
 
-  const loadWorkouts = async () => {
-    await apiGetWorkouts.request();
+  const {request: getWorkoutsAction, response: apiWorkouts} = useApi<Workout[]>("Workouts");
 
-    if (apiGetWorkouts.response.value) {
-      return apiGetWorkouts.response.value!;
-    }
+  const getWorkouts = async () => {
+      await getWorkoutsAction();
 
-    return [];
-  };
-
-  const load = async () => {
-    allWorkouts = await loadWorkouts();
-    workouts.value = allWorkouts;
-  };
-
-  const getWorkoutById = (id: number) => {
-    return allWorkouts.find((workout) => workout.id === id);
-  };
-
-  const addWorkout = async (workout: Workout) => {
-    const apiAddWorkout = useApi<Workout>('workouts', {
-      method: 'POST',
-      headers: {
-        Accept: 'application/json',
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(workout),
-    });
-    await apiAddWorkout.request();
-    if (apiAddWorkout.response.value) {
-      allWorkouts.push(apiAddWorkout.response.value!);
-      workouts.value = allWorkouts;
-    }
-  };
-
-  const updateWorkout = async (workout: Workout) => {
-    const apiAddWorkout = useApi<Workout>('workouts/' + workout.id, {
-      method: 'PUT',
-      headers: {
-        Accept: 'application/json',
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(workout),
-    });
-
-    await apiAddWorkout.request();
-    if (apiAddWorkout.response.value) {
-      load();
-    }
-  };
-
-  const deleteWorkout = async (workout: Workout) => {
-    const deleteWorkoutRequest = useApiRawRequest(`workouts/${workout.id}`, {
-      method: 'DELETE',
-    });
-
-    const res = await deleteWorkoutRequest();
-
-    if (res.status === 204) {
-      let id = allWorkouts.indexOf(workout);
-
-      if (id !== -1) {
-        allWorkouts.splice(id, 1);
+      if(apiWorkouts.value) {
+        for(let i =0; i < apiWorkouts.value.length; i++) {
+          const startTime = apiWorkouts.value[i].startTime as string;
+          const endTime = apiWorkouts.value[i].endTime as string;
+          const endTimeParts =  endTime.split(":");
+          const startTimeParts =  startTime.split(":");
+          apiWorkouts.value[i].endTime = {hours: endTimeParts[0], minutes: endTimeParts[1]};
+          apiWorkouts.value[i].startTime = {hours: startTimeParts[0], minutes: startTimeParts[1]};
+          apiWorkouts.value[i].date = apiWorkouts.value[i].date ? new Date(apiWorkouts.value[i].date).toLocaleDateString('ru-RU') : "";
+        }
+        return apiWorkouts.value;
       }
 
-      id = allWorkouts.indexOf(workout);
+      return [];
+  }
 
-      if (id !== -1) {
-        allWorkouts.splice(id, 1);
-      }
+  const addZero = (num: number) => {
+
+    return (+num ? num : 0) < 10 ? "0" + num : num;
+  };
+
+  const prepareWorkoutObj = (workout: Workout): Workout => {
+    if(typeof workout.startTime == 'object' && typeof workout.endTime== 'object') {
+      workout.startTime = `${addZero(+workout.startTime.hours)}:${addZero(+workout.startTime.minutes)}`;
+      workout.endTime = `${addZero(+workout.endTime.hours)}:${addZero(+workout.endTime.minutes)}`;
     }
+
+    return workout;
+  }
+
+  const addWorkout =async  (workout: Workout) => {
+    console.log("workout to edit",workout);
+    workout = prepareWorkoutObj(workout);
+
+    const add = useApiRawRequest(`Workouts`, {
+      method: "POST",
+      body: JSON.stringify(workout),
+      headers: {
+          'Content-Type': 'application/json'
+      }
+    })
+
+    await add();
+    workouts.value = await getWorkouts();
+    console.log("after add ", workouts.value);
   };
 
-  const filterWorkoutsByTitle = (exerciseTitleFilter: string) => {
-    workouts.value = allWorkouts.filter((x) =>
-      x.name.startsWith(exerciseTitleFilter),
-    );
+  const editWorkout = async  (workout: Workout) => {
+    console.log("workout to edit",workout);
+    workout = prepareWorkoutObj(workout);
+
+    const edit = useApiRawRequest(`Workouts/${workout.id}`, {
+      method: "PUT",
+      body: JSON.stringify(workout),
+      headers: {
+          'Content-Type': 'application/json'
+      }
+    })
+
+    await edit();
+    workouts.value = await getWorkouts();
   };
 
-  return {
-    workouts,
-    addWorkout,
-    deleteWorkout,
-    load,
-    filterWorkoutsByTitle,
-    getWorkoutById,
-    updateWorkout,
+  const removeWorkout =async  (workoutId: number) => {
+    const remove = useApiRawRequest(`Workouts/${workoutId}`, {
+      method: "DELETE",
+      headers: {
+          'Content-Type': 'application/json'
+      }
+    })
+
+    await remove();
+    workouts.value = await getWorkouts(); 
   };
+
+  return { workouts, addWorkout, editWorkout, removeWorkout, getWorkouts};
 });
+
+

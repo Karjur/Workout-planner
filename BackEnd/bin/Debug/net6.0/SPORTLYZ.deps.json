@@ -6,7 +6,7 @@
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v6.0": {
-      "SPORTLYZ/1.0.0": {
+      "Sportlyz/1.0.0": {
         "dependencies": {
           "Microsoft.AspNetCore.Authentication": "2.2.0",
           "Microsoft.AspNetCore.Authentication.JwtBearer": "6.0.10",
@@ -21,7 +21,7 @@
           "System.Security.Claims": "4.3.0"
         },
         "runtime": {
-          "SPORTLYZ.dll": {}
+          "Sportlyz.dll": {}
         }
       },
       "Microsoft.AspNetCore.Authentication/2.2.0": {
@@ -586,7 +586,7 @@
     }
   },
   "libraries": {
-    "SPORTLYZ/1.0.0": {
+    "Sportlyz/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

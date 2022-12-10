@@ -6,7 +6,6 @@ import AuthPageVue from '@/views/LoginForm.vue';
 import ProfileSprtman from '@/views/ProfileSportman.vue';
 import UpdateWorkoutVue from '@/views/UpdateWorkout.vue';
 import LoginVue from '@/views/Login.vue';
-import WorkoutDetails from '@/views/WorkoutDetails.vue'
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -22,16 +21,6 @@ const routes: Array<RouteRecordRaw> = [
     props: { title: 'Trennid' },
   },
   {
-    path: '/newworkout',
-    name: 'Lisa trenn',
-    component: AddWorkoutVue,
-  },
-  {
-    path: '/update/:id',
-    name: 'Uuenda trenni',
-    component: UpdateWorkoutVue,
-  },
-  {
     path: '/profile-sportsman',
     component: ProfileSprtman,
   },
@@ -40,10 +29,7 @@ const routes: Array<RouteRecordRaw> = [
     name: 'Logi sisse',
     component: LoginVue,
   },
-  {
-    path: '/WorkoutDetails',
-    component: WorkoutDetails,
-  },
+
 ];
 
 const router = createRouter({
