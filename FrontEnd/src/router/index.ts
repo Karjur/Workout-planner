@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router';
 import WorkoutsVue from '@/views/Workouts.vue';
+import WorkoutVue from '@/views/Workout.vue';
 import AddWorkoutVue from '@/views/AddWorkout.vue';
-import WorkoutDetailsVue from '@/views/WorkoutDetails.vue';
 import SportlyzMainVue from '@/views/SportlyzMain.vue';
 import AuthPageVue from '@/views/LoginForm.vue';
 import ProfileSprtman from '@/views/ProfileSportman.vue';
@@ -31,10 +31,10 @@ const routes: Array<RouteRecordRaw> = [
     component: LoginVue,
   },
   {
-    path: '/trainings/:id',
-    component: WorkoutDetailsVue,
+    path: '/training/:id',
+    name: 'Trenn',
+    component: WorkoutVue,
   },
-
 ];
 
 const router = createRouter({

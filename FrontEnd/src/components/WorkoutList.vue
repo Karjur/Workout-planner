@@ -19,12 +19,7 @@
       </h1>
 
       <p v-if="workouts.length === 0">Tühi</p>
-      <DataTable
-        :value="workouts"
-        v-else
-        editMode="row"
-        dataKey="id"
-      >
+      <DataTable :value="workouts" v-else editMode="row" dataKey="id">
         <Column field="name" header="Nimi" />
         <Column field="trainer" header="Treener" />
         <Column field="description" header="Kirjeldus" />
@@ -49,30 +44,32 @@
           bodyStyle="text-align:center"
         >
           <template #body="slotProps">
+            <button class="p-row-editor-init p-link" type="button">
+              <span
+                class="p-row-editor-init-icon pi pi-fw pi-external-link"
+                @click="
+                  () => {
+                    navigateToTraning(slotProps.data);
+                  }
+                "
+              ></span>
+            </button>
             <button
-                class="p-row-editor-init p-link"
-                type="button"
-                @click="async (e) =>  goToWorkoudDetails(slotProps.data)"
-              >
-                <span class="p-row-editor-init-icon pi pi-fw pi-pencil"></span>
-              </button>     
+              class="p-row-editor-init p-link"
+              type="button"
+              data-bs-toggle="modal"
+              data-bs-target="#exampleModal"
+              @click="async (e) => await setEditWorkout(slotProps.data)"
+            >
+              <span class="p-row-editor-init-icon pi pi-fw pi-pencil"></span>
+            </button>
             <button
-                class="p-row-editor-init p-link"
-                type="button"
-                data-bs-toggle="modal"
-                data-bs-target="#exampleModal"
-                @click="async (e) =>  await setEditWorkout(slotProps.data)"
-              >
-                <span class="p-row-editor-init-icon pi pi-fw pi-pencil"></span>
-              </button>
-              <button
-                class="p-row-editor-init p-link"
-                type="button"
-                @click="(e) => removeWorkout(slotProps.data)"
-              >
-                <span class="p-row-editor-init-icon pi pi-fw pi-trash"></span>
-              </button>
-              
+              class="p-row-editor-init p-link"
+              type="button"
+              @click="(e) => removeWorkout(slotProps.data)"
+            >
+              <span class="p-row-editor-init-icon pi pi-fw pi-trash"></span>
+            </button>
           </template>
         </Column>
       </DataTable>
@@ -86,18 +83,19 @@ import { Workout } from '@/modules/workout';
 import { useWorkoutsStore } from '@/stores/workoutsStore';
 import { storeToRefs } from 'pinia';
 import { defineComponent, ref } from 'vue';
+import { useRouter } from 'vue-router';
 import WorkoutModal from './WorkoutModal.vue';
 
 export default defineComponent({
-
   props: {
     title: String,
   },
   setup() {
-    
     const workoutStore = useWorkoutsStore();
-    const {workouts} = storeToRefs(workoutStore);
-    const { removeWorkout: removeWorkoutMethod, getWorkouts } = useWorkoutsStore();
+    const router = useRouter();
+    const { workouts } = storeToRefs(workoutStore);
+    const { removeWorkout: removeWorkoutMethod, getWorkouts } =
+      useWorkoutsStore();
 
     const editWorkout = ref<Workout | null>(null);
 
@@ -115,6 +113,11 @@ export default defineComponent({
       editWorkout.value = null;
       loadWorkouts();
     };
+
+    const navigateToTraning = (data: Workout) => {
+      router.push(`/training/${data.id}`);
+    };
+
     return {
       close,
       setEditWorkout,
@@ -123,15 +126,13 @@ export default defineComponent({
       getWorkouts,
       loadWorkouts,
       workouts,
+      navigateToTraning,
     };
   },
   async mounted() {
     this.loadWorkouts();
   },
   methods: {
-    goToWorkoudDetails(data: Workout) {
-      this.$router.push(`/trainings/${data.id}`);
-    },
     async removeWorkout(workout: Workout) {
       const okRemove = confirm(
         `Do you really want to remove workout ${workout.name}?`,
@@ -144,10 +145,9 @@ export default defineComponent({
   },
   watch: {
     workouts() {
-      console.log("workouts changes", this.workouts);
-    }
+      console.log('workouts changes', this.workouts);
+    },
   },
   components: { WorkoutModal },
 });
 </script>
-
