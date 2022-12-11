@@ -2,5 +2,15 @@
 
 body {
   font-family: 'Open Sans';
-  background: lightsteelblue;
+  background-image: url('@/assets/imageback.png');
+}
+.center {
+  display: flex;
+  justify-content: center;
+}
+.box {
+  width: 300px;
+  border: 15px solid white;
+  padding: 50px;
+  margin: 20px;
 }

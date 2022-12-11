@@ -1,6 +1,5 @@
 <template>
   <div class="text-right mb-3"></div>
-
   <WorkoutList title="Trennide nimekiri" />
 </template>
 

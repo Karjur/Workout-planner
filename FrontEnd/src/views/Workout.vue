@@ -1,4 +1,6 @@
 <template>
+  <div class="center">
+    <div class="box">
     <div v-if="workout != null">
       <div>id: {{ workout.id }}</div>
       <div>name: {{ workout.name }}</div>
@@ -13,6 +15,8 @@
       <input type="checkbox" id="checkbox">
       <label for="checkbox"></label>
     </div>
+  </div>
+  </div>
   </template>
   
   <script lang="ts">
