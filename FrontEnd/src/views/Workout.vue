@@ -10,6 +10,8 @@
       <div>endTime: {{ workout.endTime }}</div>
       <div>maxParticipants: {{ workout.maxParticipants }}</div>
       <div>nrOfParticipants: {{ workout.nrOfParticipants }}</div>
+      <input type="checkbox" id="checkbox">
+      <label for="checkbox"></label>
     </div>
   </template>
   

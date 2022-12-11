@@ -22,7 +22,6 @@
       <DataTable :value="workouts" v-else editMode="row" dataKey="id">
         <Column field="name" header="Nimi" />
         <Column field="trainer" header="Treener" />
-        <Column field="description" header="Kirjeldus" />
         <Column field="location" header="Asukoht" />
         <Column field="date" header="Kuupäev" />
         <Column field="startTime" header="Algus">

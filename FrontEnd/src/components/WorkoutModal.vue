@@ -128,7 +128,7 @@
 </template>
 
 <script lang="ts">
-import { Workout } from '@/modules/Workout';
+import { Workout } from '@/modules/workout';
 import { useWorkoutsStore } from '@/stores/workoutsStore';
 import { defineComponent, Ref, ref, PropType } from 'vue';
 
