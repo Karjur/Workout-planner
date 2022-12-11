@@ -24,10 +24,10 @@ namespace BackEnd.Model
             );
 
             modelBuilder.Entity<Workout>().HasData(
-                new Workout { Id = 1, Name = "Jalgpall", Trainer = "Kalle", Description = "kirjeldus", Location = "Tallinn", StartTime = "18:00", EndTime = "20:00" },
-                new Workout { Id = 2, Name = "Võrkpall", Trainer = "Pille", Description = "kirjeldus", Location = "Tallinn", StartTime = "18:00", EndTime = "20:00" },
-                new Workout { Id = 3, Name = "Sulgpall", Trainer = "Sulev", Description = "kirjeldus", Location = "Tallinn", StartTime = "18:00", EndTime = "20:00" },
-                new Workout { Id = 4, Name = "Korvpall", Trainer = "Olev", Description = "kirjeldus", Location = "Tallinn", StartTime = "18:00", EndTime = "20:00" }
+                new Workout { Id = 1, Name = "Jalgpall", Trainer = "Kalle", Description = "kirjeldus", Location = "Tallinn", Date = "12/12/2022", StartTime = "18:00", EndTime = "20:00", MaxParticipants = 10, NrOfParticipants = 0},
+                new Workout { Id = 2, Name = "Võrkpall", Trainer = "Pille", Description = "kirjeldus", Location = "Tallinn", Date = "12/12/2022", StartTime = "18:00", EndTime = "20:00", MaxParticipants = 10, NrOfParticipants = 0},
+                new Workout { Id = 3, Name = "Sulgpall", Trainer = "Sulev", Description = "kirjeldus", Location = "Tallinn", Date = "12/12/2022", StartTime = "18:00", EndTime = "20:00", MaxParticipants = 10, NrOfParticipants = 0},
+                new Workout { Id = 4, Name = "Korvpall", Trainer = "Olev", Description = "kirjeldus", Location = "Tallinn", Date = "12/12/2022", StartTime = "18:00", EndTime = "20:00", MaxParticipants = 10, NrOfParticipants = 0}
             );
         }
     }

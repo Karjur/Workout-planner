@@ -25,6 +25,10 @@ namespace BackEnd.Model
         public string? StartTime { get; init; }
         [Column("end_time")]
         public string? EndTime { get; init; }
+        [Column("max_participants")]
+        public int MaxParticipants { get; init; }
+        [Column("nr_of_participants")]
+        public int NrOfParticipants { get; init; }
 
     }
 }

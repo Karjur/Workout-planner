@@ -3477,24 +3477,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Polina Volohhonskaja\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\karmo\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Polina Volohhonskaja\\Project\\itb2203-2022-sportlyz\\BackEnd\\SPORTLYZ.csproj",
+      "projectUniqueName": "C:\\Users\\karmo\\OneDrive\\Desktop\\itb2203-2022-sportlyz\\BackEnd\\SPORTLYZ.csproj",
       "projectName": "SPORTLYZ",
-      "projectPath": "C:\\Users\\Polina Volohhonskaja\\Project\\itb2203-2022-sportlyz\\BackEnd\\SPORTLYZ.csproj",
-      "packagesPath": "C:\\Users\\Polina Volohhonskaja\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Polina Volohhonskaja\\Project\\itb2203-2022-sportlyz\\BackEnd\\obj\\",
+      "projectPath": "C:\\Users\\karmo\\OneDrive\\Desktop\\itb2203-2022-sportlyz\\BackEnd\\SPORTLYZ.csproj",
+      "packagesPath": "C:\\Users\\karmo\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\karmo\\OneDrive\\Desktop\\itb2203-2022-sportlyz\\BackEnd\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\Polina Volohhonskaja\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\karmo\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -3584,7 +3579,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
       }
     }
   }

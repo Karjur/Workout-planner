@@ -94,6 +94,18 @@
               >
               <Datepicker v-model="workout.endTime" timePicker />
             </div>
+            <div class="text-left mb-3">
+              <label for="formWorkoutExampleInput8" class="form-label"
+                >Maksimum osalejad</label
+              >
+              <input
+                :type="'text'"
+                class="form-control"
+                id="formWorkoutExampleInput8"
+                placeholder="Maksimum osalejad"
+                v-model="workout.maxParticipants"
+              />
+            </div>
           </div>
           <div class="modal-footer">
             <button
@@ -129,6 +141,8 @@ const emptyWorkout = {
   date: '',
   startTime: { hours: '', minutes: '' },
   endTime: { hours: '', minutes: '' },
+  maxParticipants: 0,
+  nrOfParticipants: 0,
 };
 
 export default defineComponent({
