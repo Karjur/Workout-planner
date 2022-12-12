@@ -2,17 +2,36 @@
   <div class="center">
     <div class="box">
     <div v-if="workout != null">
-      <div>id: {{ workout.id }}</div>
-      <div>name: {{ workout.name }}</div>
-      <div>trainer: {{ workout.trainer }}</div>
-      <div>description: {{ workout.description }}</div>
-      <div>location: {{ workout.location }}</div>
-      <div>date: {{ workout.date }}</div>
-      <div>startTime: {{ workout.startTime }}</div>
-      <div>endTime: {{ workout.endTime }}</div>
-      <div>maxParticipants: {{ workout.maxParticipants }}</div>
-      <div>nrOfParticipants: {{ workout.nrOfParticipants }}</div>
-      <!-- <input type="checkbox" v-model="checked" @change="updateParticipants" /> -->
+      <div>Trenni nimi: {{ workout.name }}</div>
+      <div>Treener: {{ workout.trainer }}</div>
+      <div>Kirjeldus: {{ workout.description }}</div>
+      <div>Asukoht: {{ workout.location }}</div>
+      <div>Kuupäev: {{ workout.date }}</div>
+      <div>Algus: {{ workout.startTime }}</div>
+      <div>Lõpp: {{ workout.endTime }}</div>
+      <div>Max osalejad: {{ workout.maxParticipants }}</div>
+      <div>Osalejad: {{ workout.nrOfParticipants }}</div>
+      <input type="checkbox" v-model="checked" @click="updateParticipants(1)" />
+            <input
+              type="radio"
+              id="enable"
+              value="10"
+              v-model="workout.nrOfParticipants"
+              @click="updateParticipants(1)"
+              checked
+            />
+            <label for="enable">Going</label>
+            <br />
+            <input
+              type="radio"
+              id="disable"
+              value=""
+              v-model="workout.nrOfParticipants"
+              @click="updateParticipants(-1)"
+            />
+            <label for="disable">Not going</label>
+          </div>
+          <div>
       <button class="text-red-500" @click="updateParticipants(1)">I will be attending the workout</button>
       <button class="text-red-500" @click="updateParticipants(-1)">I will not be attending the workout</button>
     </div>
@@ -33,7 +52,7 @@
     async mounted() {
       const router = useRouter();
       const id = +router.currentRoute.value.params.id;
-      const response = await fetch('http://localhost:5000/api/Workouts/' + id);
+      const response = await fetch('https://localhost:5000/api/Workouts/' + id);
       this.workout = await response.json();
     },
     methods: {

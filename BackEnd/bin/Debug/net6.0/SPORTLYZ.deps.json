@@ -6,7 +6,7 @@
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v6.0": {
-      "SPORTLYZ/1.0.0": {
+      "Sportlyz/1.0.0": {
         "dependencies": {
           "Microsoft.AspNetCore.Authentication": "2.2.0",
           "Microsoft.AspNetCore.Authentication.JwtBearer": "6.0.10",
@@ -18,12 +18,14 @@
           "Npgsql.EntityFrameworkCore.PostgreSQL": "6.0.7",
           "Swashbuckle.AspNetCore": "6.2.3",
           "System.IdentityModel.Tokens.Jwt": "6.25.0",
-          "System.Security.Claims": "4.3.0"
+          "System.Security.Claims": "4.3.0",
+          "axios": "0.16.2"
         },
         "runtime": {
-          "SPORTLYZ.dll": {}
+          "Sportlyz.dll": {}
         }
       },
+      "axios/0.16.2": {},
       "Microsoft.AspNetCore.Authentication/2.2.0": {
         "dependencies": {
           "Microsoft.AspNetCore.Authentication.Core": "2.2.0",
@@ -586,10 +588,17 @@
     }
   },
   "libraries": {
-    "SPORTLYZ/1.0.0": {
+    "Sportlyz/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "axios/0.16.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Xp86hC7/Z4CDwlbM0udtI/Q/AKxsQG7EiZItwtqj3KeZKC1xKxNDImtNPB5e7i6PK2EdOfGns5BtVR6u1V/NEQ==",
+      "path": "axios/0.16.2",
+      "hashPath": "axios.0.16.2.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Authentication/2.2.0": {
       "type": "package",
