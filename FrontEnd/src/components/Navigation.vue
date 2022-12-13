@@ -5,39 +5,15 @@
         <img src="@/assets/sportlyz_logo.png" alt="" />
       </div>
       <ul class="navigation" sm:justify-start>
-        <li>
-          <router-link
-            aria-current="page"
-            class="link"
-            :to="{ name: 'Avaleht' }"
-            >Avaleht</router-link
-          >
+        <li v-for="path in paths">
+          <router-link aria-current="page" class="link" :to="path.path">{{
+            path.name
+          }}</router-link>
         </li>
-        <li>
-          <router-link aria-current="page" class="link" to="/profile-sportsman"
-            >Profiil</router-link
-          >
-        </li>
-        <li>
-          <router-link
-            aria-current="page"
-            class="link"
-            :to="{ name: 'Trennid' }"
-            >Treeningud</router-link
-          >
-        </li>
-        <li>
-          <router-link
-            aria-current="page"
-            class="link"
-            :to="{ name: 'Logi sisse' }"
-            >Login</router-link
-          >
-        </li>
-        <li>
-          <div
-            class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0 ml-3 relative"
-          ></div>
+        <li v-if="auth.isAuth" @click="logout">
+          <a class="router-link-active router-link-exact-active link">
+            Log out ({{ auth.role }})
+          </a>
         </li>
       </ul>
     </nav>
@@ -45,9 +21,26 @@
 </template>
 
 <script lang="ts">
-export default {
+import { IPageData } from '@/router';
+import { useAuthStore } from '@/stores/authStore';
+import { storeToRefs } from 'pinia';
+import { defineComponent } from 'vue';
+
+export default defineComponent({
   name: 'navigation',
-};
+  setup() {
+    const { navbarPages } = storeToRefs(useAuthStore());
+    const authStore = useAuthStore();
+    const { auth } = storeToRefs(authStore);
+    return { paths: navbarPages, logoutAction: authStore.logout, auth };
+  },
+  methods: {
+    logout() {
+      this.logoutAction();
+      this.$router.push('/');
+    },
+  },
+});
 </script>
 
 <style lang="scss" scoped>

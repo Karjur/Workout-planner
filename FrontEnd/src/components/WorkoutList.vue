@@ -4,6 +4,7 @@
       <h1 class="font-bold text-center">
         {{ title }}
         <button
+          v-if="auth.role == AppRole.MASTER"
           a
           class="btn btn-primary"
           style="float: right"
@@ -84,6 +85,7 @@ import { storeToRefs } from 'pinia';
 import { defineComponent, ref } from 'vue';
 import { useRouter } from 'vue-router';
 import WorkoutModal from './WorkoutModal.vue';
+import { useAuthStore, AppRole } from '@/stores/authStore';
 
 export default defineComponent({
   props: {
@@ -97,6 +99,9 @@ export default defineComponent({
       useWorkoutsStore();
 
     const editWorkout = ref<Workout | null>(null);
+
+    const authStore = useAuthStore();
+    const { auth } = storeToRefs(authStore);
 
     const setEditWorkout = (data: Workout) => {
       editWorkout.value = { ...data };
@@ -126,6 +131,8 @@ export default defineComponent({
       loadWorkouts,
       workouts,
       navigateToTraning,
+      auth,
+      AppRole,
     };
   },
   async mounted() {
