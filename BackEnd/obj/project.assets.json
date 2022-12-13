@@ -3494,19 +3494,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\karlk\\.nuget\\packages\\": {}
+    "C:\\Users\\karmo\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\karlk\\Sportlyz\\itb2203-2022-sportlyz\\BackEnd\\SPORTLYZ.csproj",
+      "projectUniqueName": "C:\\Users\\karmo\\OneDrive\\Desktop\\itb2203-2022-sportlyz\\BackEnd\\SPORTLYZ.csproj",
       "projectName": "SPORTLYZ",
-      "projectPath": "C:\\Users\\karlk\\Sportlyz\\itb2203-2022-sportlyz\\BackEnd\\SPORTLYZ.csproj",
-      "packagesPath": "C:\\Users\\karlk\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\karlk\\Sportlyz\\itb2203-2022-sportlyz\\BackEnd\\obj\\",
+      "projectPath": "C:\\Users\\karmo\\OneDrive\\Desktop\\itb2203-2022-sportlyz\\BackEnd\\SPORTLYZ.csproj",
+      "packagesPath": "C:\\Users\\karmo\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\karmo\\OneDrive\\Desktop\\itb2203-2022-sportlyz\\BackEnd\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\karlk\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\karmo\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -3603,13 +3603,5 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
       }
     }
-  },
-  "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Problem reading the cache file C:\\Users\\karlk\\Sportlyz\\itb2203-2022-sportlyz\\BackEnd\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
-    }
-  ]
+  }
 }

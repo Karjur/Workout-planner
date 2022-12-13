@@ -42,6 +42,7 @@
   import { useRouter } from 'vue-router';
   import { Workout } from '@/modules/workout';
   import axios from 'axios';
+  import { id } from 'date-fns/locale';
   
   export default defineComponent({
     data() {
@@ -57,16 +58,23 @@
     async updateParticipants(value: number) {
       if (this.workout && this.workout.nrOfParticipants + value >= 0 && this.workout.nrOfParticipants + value <= this.workout.maxParticipants) {
         this.workout.nrOfParticipants += value;
-      
-      // ei tööta  
-      //   try {
-      //   await axios.put('http://localhost:5000/workouts/1', {
-      //     nrOfParticipants: this.workout.nrOfParticipants
-      //   });
-      // } catch (error) {
-      //   // handle the error here
-      // }
-      // ei tööta
+        try {
+          await axios.put('http://localhost:5000/api/Workouts/' + this.workout.id, {
+            id: this.workout.id,
+            name: this.workout.name,
+            trainer: this.workout.trainer,
+            description: this.workout.description,
+            location: this.workout.location,
+            date: this.workout.date,
+            startTime: this.workout.startTime,
+            endTime: this.workout.endTime,
+            maxParticipants: this.workout.maxParticipants,
+            nrOfParticipants: this.workout.nrOfParticipants
+          } 
+        );
+      } catch (error) {
+        console.log(error)
+      }
     }
   }
   }});
