@@ -2,20 +2,21 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace BackEnd.Model
 {
-    [Table("user")]
     public class User
     {
-        [Column("id")]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
 
-        [Column("username")]
         public string Username { get; set; } = "";
 
-        [Column("password")]
         public string Password { get; set; } = "";
+
+        // [JsonIgnore]
+        // public virtual ICollection<Workout> UserWorkouts { get; set; } = new List<Workout>();
     }
 }

@@ -29,6 +29,6 @@ namespace BackEnd.Model
         public int MaxParticipants { get; init; }
         [Column("nr_of_participants")]
         public int NrOfParticipants { get; init; }
-
+        // public virtual ICollection<WorkoutUser> WorkoutUsers { get; set; } = new List<WorkoutUser>();
     }
 }
