@@ -7,8 +7,8 @@
       <div class="item4">Lõpp: {{ workout.endTime }}</div>
       <div class="item5">Treener: {{ workout.trainer }}</div>
       <div class="item6">Asukoht: {{ workout.location }}</div>
-      <div class="item7">Max osalejad: {{ workout.maxParticipants }}</div>
-      <div class="item8">Osalejad: {{ workout.nrOfParticipants }}</div>
+      <div class="item7"></div>
+      <div class="item8">Osalejad: {{ workout.nrOfParticipants }} / {{ workout.maxParticipants }}</div>
       <div class="item9">
         <input
           type="radio"

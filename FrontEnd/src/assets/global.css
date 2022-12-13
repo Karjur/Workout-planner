@@ -8,7 +8,8 @@ body {
   display: grid;
   grid-template-columns: auto auto auto;
   grid-template-rows: auto auto auto auto auto;
-  row-gap: 5px;
+  row-gap: 10px;
+  column-gap: 5px;
   padding: 10px;
 }
 
@@ -41,10 +42,6 @@ body {
   grid-column: 2;
   grid-row: 3;
 }
-.item7 {
-  grid-column: 3;
-  grid-row: 3;
-}
 .item8 {
   grid-column: 1;
   grid-row: 4;
@@ -59,5 +56,6 @@ body {
 }
 .item11 {
   grid-column: 1 / span 3;
-  grid-row: 5;
+  grid-row: 5
+  
 }
