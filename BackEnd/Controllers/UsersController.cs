@@ -25,13 +25,14 @@ namespace BackEnd.Controllers
             _context = context;
         }
 
-        [HttpPost("login")]
-        public IActionResult Login([FromBody] User login) {
-            var dbUser = _context.UserList!.FirstOrDefault(user => user.Username == login.Username);
-
-            if (dbUser == null) return NotFound();
-
-            return Ok(dbUser);
+        [HttpGet("{username}&{password}")]
+        public ActionResult<User> GetUser(string username, string password) {
+            var userN = _context.UserList!.Where(x => x.Username == username);
+            var userP = _context.UserList!.Where(x => x.Password == password);
+            if (userN == null || userP == null && userN == userP) {
+                return NotFound();
+            }
+            return Ok(userN);
         }
     }
 }
