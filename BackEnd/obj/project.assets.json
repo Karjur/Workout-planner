@@ -3494,24 +3494,72 @@
     ]
   },
   "packageFolders": {
+<<<<<<< HEAD
     "C:\\Users\\Polina Volohhonskaja\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+=======
+<<<<<<< HEAD
+    "C:\\Users\\karmo\\.nuget\\packages\\": {}
+=======
+<<<<<<< HEAD
+    "C:\\Users\\Polina Volohhonskaja\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+=======
+    "C:\\Users\\karlk\\.nuget\\packages\\": {}
+>>>>>>> dcb8dcb71ce27aabf49fc03b7b18f347e1e88e55
+>>>>>>> fd5ea13988ae4c68a7c61ebc9f540f531087a818
+>>>>>>> 79c84aaed7b23c4e81ae50921792ff15bc01c2c7
   },
   "project": {
     "version": "1.0.0",
     "restore": {
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+      "projectUniqueName": "C:\\Users\\karmo\\OneDrive\\Desktop\\itb2203-2022-sportlyz\\BackEnd\\SPORTLYZ.csproj",
+      "projectName": "SPORTLYZ",
+      "projectPath": "C:\\Users\\karmo\\OneDrive\\Desktop\\itb2203-2022-sportlyz\\BackEnd\\SPORTLYZ.csproj",
+      "packagesPath": "C:\\Users\\karmo\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\karmo\\OneDrive\\Desktop\\itb2203-2022-sportlyz\\BackEnd\\obj\\",
+=======
+<<<<<<< HEAD
+>>>>>>> 79c84aaed7b23c4e81ae50921792ff15bc01c2c7
       "projectUniqueName": "C:\\Users\\Polina Volohhonskaja\\Project\\itb2203-2022-sportlyz\\BackEnd\\Sportlyz.csproj",
       "projectName": "Sportlyz",
       "projectPath": "C:\\Users\\Polina Volohhonskaja\\Project\\itb2203-2022-sportlyz\\BackEnd\\Sportlyz.csproj",
       "packagesPath": "C:\\Users\\Polina Volohhonskaja\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\Polina Volohhonskaja\\Project\\itb2203-2022-sportlyz\\BackEnd\\obj\\",
+<<<<<<< HEAD
+=======
+=======
+      "projectUniqueName": "C:\\Users\\karlk\\Sportlyz\\itb2203-2022-sportlyz\\BackEnd\\SPORTLYZ.csproj",
+      "projectName": "SPORTLYZ",
+      "projectPath": "C:\\Users\\karlk\\Sportlyz\\itb2203-2022-sportlyz\\BackEnd\\SPORTLYZ.csproj",
+      "packagesPath": "C:\\Users\\karlk\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\karlk\\Sportlyz\\itb2203-2022-sportlyz\\BackEnd\\obj\\",
+>>>>>>> dcb8dcb71ce27aabf49fc03b7b18f347e1e88e55
+>>>>>>> fd5ea13988ae4c68a7c61ebc9f540f531087a818
+>>>>>>> 79c84aaed7b23c4e81ae50921792ff15bc01c2c7
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
+<<<<<<< HEAD
         "C:\\Users\\Polina Volohhonskaja\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+=======
+<<<<<<< HEAD
+        "C:\\Users\\karmo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+=======
+<<<<<<< HEAD
+        "C:\\Users\\Polina Volohhonskaja\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+=======
+        "C:\\Users\\karlk\\AppData\\Roaming\\NuGet\\NuGet.Config",
+>>>>>>> dcb8dcb71ce27aabf49fc03b7b18f347e1e88e55
+>>>>>>> fd5ea13988ae4c68a7c61ebc9f540f531087a818
+>>>>>>> 79c84aaed7b23c4e81ae50921792ff15bc01c2c7
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -3608,5 +3656,25 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
       }
     }
+<<<<<<< HEAD
   }
+=======
+<<<<<<< HEAD
+  }
+=======
+  },
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+<<<<<<< HEAD
+      "message": "Problem reading the cache file C:\\Users\\Polina Volohhonskaja\\Project\\itb2203-2022-sportlyz\\BackEnd\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+=======
+      "message": "Problem reading the cache file C:\\Users\\karlk\\Sportlyz\\itb2203-2022-sportlyz\\BackEnd\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+>>>>>>> dcb8dcb71ce27aabf49fc03b7b18f347e1e88e55
+    }
+  ]
+>>>>>>> fd5ea13988ae4c68a7c61ebc9f540f531087a818
+>>>>>>> 79c84aaed7b23c4e81ae50921792ff15bc01c2c7
 }
