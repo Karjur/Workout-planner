@@ -30,11 +30,6 @@ const routes: Array<RouteRecordRaw> = [
     path: '/profile',
     component: ProfileSportman,
   },
-  {
-    path: '/training/:id',
-    name: 'Trenn',
-    component: WorkoutVue,
-  },
 ];
 
 const router = createRouter({

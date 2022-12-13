@@ -16,8 +16,4 @@ export const privatePaths: IPageData[] = [
     path: '/profile',
     name: 'Profile',
   },
-  {
-    path: '/training/:id',
-    name: 'Trenn',
-  },
 ];
