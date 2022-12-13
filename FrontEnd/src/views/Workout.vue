@@ -8,15 +8,16 @@
       <div class="item5">Treener: {{ workout.trainer }}</div>
       <div class="item6">Asukoht: {{ workout.location }}</div>
       <div class="item7"></div>
-      <div class="item8">Osalejad: {{ workout.nrOfParticipants }} / {{ workout.maxParticipants }}</div>
+      <div class="item8">Osalejad: {{ participantNum }} / {{ workout.maxParticipants }}</div>
       <div class="item9">
         <input
-          type="radio"
-          id="enable"
-          value="10"
-          v-model="workout.nrOfParticipants"
-          @click="updateParticipants(1)"
-          checked
+            type="radio"
+            id="enable"
+            name="participation"
+            value="participates"
+          :checked="checked"
+
+            @click=updateParticipants(false)
           />
           <label for="enable">Osalen</label>
       </div>
@@ -24,9 +25,10 @@
         <input
           type="radio"
           id="disable"
-          value=""
-          v-model="workout.nrOfParticipants"
-          @click="updateParticipants(-1)"
+          name="participation"
+          value="does not participate"
+          :checked="!checked"
+          @click=updateParticipants(true)
           />
           <label for="disable">Ei osale</label>
       </div>      
@@ -41,42 +43,35 @@
   import { defineComponent } from 'vue';
   import { useRouter } from 'vue-router';
   import { Workout } from '@/modules/workout';
+  
   import axios from 'axios';
   import { id } from 'date-fns/locale';
   
   export default defineComponent({
     data() {
-      return { workout: null as Workout | null, checked: false, };
+      return { 
+        workout: null as Workout | null, 
+        checked: false,
+        participantNum: 0
+      };
     },
     async mounted() {
       const router = useRouter();
       const id = +router.currentRoute.value.params.id;
-      const response = await fetch('http://localhost:5000/api/Workouts/' + id);
-      this.workout = await response.json();
+      const responseWorkout= await fetch('https://localhost:5000/api/Workouts/' + id);
+      this.workout = await responseWorkout.json();
+      const participants = await fetch('https://localhost:5000/api/Workouts/' + id + '/')
     },
     methods: {
-    async updateParticipants(value: number) {
-      if (this.workout && this.workout.nrOfParticipants + value >= 0 && this.workout.nrOfParticipants + value <= this.workout.maxParticipants) {
-        this.workout.nrOfParticipants += value;
-        try {
-          await axios.put('http://localhost:5000/api/Workouts/' + this.workout.id, {
-            id: this.workout.id,
-            name: this.workout.name,
-            trainer: this.workout.trainer,
-            description: this.workout.description,
-            location: this.workout.location,
-            date: this.workout.date,
-            startTime: this.workout.startTime,
-            endTime: this.workout.endTime,
-            maxParticipants: this.workout.maxParticipants,
-            nrOfParticipants: this.workout.nrOfParticipants
-          } 
-        );
-      } catch (error) {
-        console.log(error)
+    async updateParticipants(remove: boolean) {
+      if(remove && this.checked) {
+        this.participantNum--;
+        this.checked = false;
+      } else if(!remove && !this.checked) {
+        this.participantNum++;
+        this.checked = true;
       }
     }
-  }
   }});
   </script>
   
