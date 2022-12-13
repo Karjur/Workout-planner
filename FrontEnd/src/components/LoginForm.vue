@@ -45,7 +45,7 @@
           <button
             @click="submitForm"
             :disabled="!isAvailableSubmit"
-            class="btn btn-success"
+            class="btn btn-primary"
           >
             {{ 'Login sisse' }}
           </button>
