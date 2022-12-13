@@ -32,7 +32,6 @@ const routes: Array<RouteRecordRaw> = [
   },
   {
     path: '/training/:id',
-    name: 'Trenn',
     component: WorkoutVue,
   },
 ];

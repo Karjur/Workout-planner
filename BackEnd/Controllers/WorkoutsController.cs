@@ -34,6 +34,38 @@ namespace BackEnd.Controllers
             return Ok(workout);
         }
 
+        [HttpGet("{id}/participants")]
+        public IActionResult GetWorkoutParticipants(int id) {
+            var workout = _context.WorkoutList!.Find(id);
+            if (workout == null) {
+                return NotFound();
+            }
+            var participants = _context.WorkoutUserList?.Where(wu => wu.WorkoutId == id);
+            return Ok(participants);
+        }
+        [HttpPut("{id}/participants")]
+        public IActionResult GetWorkoutParticipants(int id, [FromQuery] bool remove) {
+            var workout = _context.WorkoutList!.Find(id);
+            if (workout == null) {
+                return NotFound();
+            }
+            var userId = 1;
+            var participant = _context.WorkoutUserList?.FirstOrDefault(wu => wu.UserId == userId);
+            if(remove && participant != null) {
+                _context.WorkoutUserList.Remove(participant);
+                _context.SaveChanges();
+            } else if(!remove && participant == null) {
+                _context.WorkoutUserList.Add(new () {
+                    Id = 0,
+                    UserId = userId, 
+                    WorkoutId = id 
+                });
+                _context.SaveChanges();
+            }
+            var participants = _context.WorkoutUserList.Where(wu => wu.WorkoutId == id);
+            return Ok(participants.Count());
+        }
+
         [HttpPost]
         public IActionResult AddWorkout([FromBody] Workout workout) {
             var dbWorkout = _context.WorkoutList!.Find(workout.Id);
