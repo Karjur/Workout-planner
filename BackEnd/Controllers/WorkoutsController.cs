@@ -50,7 +50,7 @@ namespace BackEnd.Controllers
                 return NotFound();
             }
             var userId = 1;
-            var participant = _context.WorkoutUserList?.FirstOrDefault(wu => wu.UserId == userId);
+            var participant = _context.WorkoutUserList?.FirstOrDefault(wu => wu.UserId == userId && wu.WorkoutId== id);
             if(remove && participant != null) {
                 _context.WorkoutUserList.Remove(participant);
                 _context.SaveChanges();

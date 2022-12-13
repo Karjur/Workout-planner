@@ -54,22 +54,25 @@
                 "
               ></span>
             </button>
-            <button
-              class="p-row-editor-init p-link"
-              type="button"
-              data-bs-toggle="modal"
-              data-bs-target="#exampleModal"
-              @click="async (e) => await setEditWorkout(slotProps.data)"
-            >
-              <span class="p-row-editor-init-icon pi pi-fw pi-pencil"></span>
-            </button>
-            <button
-              class="p-row-editor-init p-link"
-              type="button"
-              @click="(e) => removeWorkout(slotProps.data)"
-            >
-              <span class="p-row-editor-init-icon pi pi-fw pi-trash"></span>
-            </button>
+            
+              <button
+              v-if="auth.role == AppRole.MASTER"
+                class="p-row-editor-init p-link"
+                type="button"
+                data-bs-toggle="modal"
+                data-bs-target="#exampleModal"
+                @click="async (e) => await setEditWorkout(slotProps.data)"
+              >
+                <span class="p-row-editor-init-icon pi pi-fw pi-pencil"></span>
+              </button>
+              <button
+              v-if="auth.role == AppRole.MASTER"
+                class="p-row-editor-init p-link"
+                type="button"
+                @click="(e) => removeWorkout(slotProps.data)"
+              >
+                <span class="p-row-editor-init-icon pi pi-fw pi-trash"></span>
+              </button>
           </template>
         </Column>
       </DataTable>

@@ -68,7 +68,7 @@
         try {
           const participantsCount = await axios.get<any[]>('https://localhost:5000/api/Workouts/' + id + '/participants');
           console.log("participantsCount", participantsCount.data);
-          this.checked = participantsCount.data.findIndex(p => p.id == id) >= 0;
+          this.checked = participantsCount.data.findIndex(p => p.userId  == 1) >= 0;
           this.participantNum = participantsCount.data.length;
         } catch(e) {
           this.participantNum = -1;
