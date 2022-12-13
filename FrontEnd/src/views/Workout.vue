@@ -52,7 +52,7 @@
       return { 
         workout: null as Workout | null, 
         checked: false,
-        participantNum: 0
+        participantNum: 0,
       };
     },
     async mounted() {
@@ -60,17 +60,27 @@
       const id = +router.currentRoute.value.params.id;
       const responseWorkout= await fetch('https://localhost:5000/api/Workouts/' + id);
       this.workout = await responseWorkout.json();
-      const participants = await fetch('https://localhost:5000/api/Workouts/' + id + '/')
+      this.updateParticipantsAsync();
     },
     methods: {
+      async updateParticipantsAsync() {
+        const id = +this.$router.currentRoute.value.params.id;
+        try {
+          const participantsCount = await axios.get<any[]>('https://localhost:5000/api/Workouts/' + id + '/participants');
+          console.log("participantsCount", participantsCount.data);
+          this.checked = participantsCount.data.findIndex(p => p.id == id) >= 0;
+          this.participantNum = participantsCount.data.length;
+        } catch(e) {
+          this.participantNum = -1;
+          this.checked = false;
+
+        }
+      },
     async updateParticipants(remove: boolean) {
-      if(remove && this.checked) {
-        this.participantNum--;
-        this.checked = false;
-      } else if(!remove && !this.checked) {
-        this.participantNum++;
-        this.checked = true;
-      }
+      const id = +this.$router.currentRoute.value.params.id;
+      console.log(remove ,this.checked);
+      await axios.put<any[]>('https://localhost:5000/api/Workouts/' + id + '/participants?remove=' + remove)
+      await this.updateParticipantsAsync();
     }
   }});
   </script>
