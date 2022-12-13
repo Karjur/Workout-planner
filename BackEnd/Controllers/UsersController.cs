@@ -29,10 +29,18 @@ namespace BackEnd.Controllers
         public ActionResult<User> GetUser(string username, string password) {
             var userN = _context.UserList!.Where(x => x.Username == username);
             var userP = _context.UserList!.Where(x => x.Password == password);
-            if (userN == null || userP == null && userN == userP) {
+            if (userN == null || userP == null && userN != userP) {
                 return NotFound();
             }
             return Ok(userN);
+        }
+        [HttpGet("{id}")]
+        public ActionResult<User> GetUser(int? id) {
+            var user = _context.UserList!.Find(id);
+            if (user == null) {
+                return NotFound();
+            }
+            return Ok(user);
         }
     }
 }

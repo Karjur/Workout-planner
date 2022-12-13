@@ -4,9 +4,14 @@ import WorkoutVue from '@/views/Workout.vue';
 import AddWorkoutVue from '@/views/AddWorkout.vue';
 import SportlyzMainVue from '@/views/SportlyzMain.vue';
 import AuthPageVue from '@/views/LoginForm.vue';
-import ProfileSprtman from '@/views/ProfileSportman.vue';
+import ProfileSportman from '@/views/ProfileSportman.vue';
 import UpdateWorkoutVue from '@/views/UpdateWorkout.vue';
 import LoginVue from '@/views/Login.vue';
+
+export interface IPageData {
+  path: string;
+  name: string;
+}
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -22,13 +27,8 @@ const routes: Array<RouteRecordRaw> = [
     props: { title: 'Trennid' },
   },
   {
-    path: '/profile-sportsman',
-    component: ProfileSprtman,
-  },
-  {
-    path: '/login',
-    name: 'Logi sisse',
-    component: LoginVue,
+    path: '/profile',
+    component: ProfileSportman,
   },
   {
     path: '/training/:id',

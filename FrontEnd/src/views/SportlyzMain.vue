@@ -1,7 +1,9 @@
 <template>
-    <SportlyzForm title="Avaleht" />
+  <div class="col">
+    <LoginForm />
+  </div>
 </template>
 
 <script setup lang="ts">
-import SportlyzForm from '@/components/SportlyzForm.vue';
+import LoginForm from '@/components/LoginForm.vue';
 </script>
