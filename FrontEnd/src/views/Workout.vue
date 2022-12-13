@@ -13,9 +13,9 @@
         <input
           type="radio"
           id="enable"
-          name="participation"
-          value="participates"
-          @click=updateParticipants(1)
+          value="10"
+          v-model="workout.nrOfParticipants"
+          @click="updateParticipants(1)"
           checked
           />
           <label for="enable">Osalen</label>
@@ -24,9 +24,9 @@
         <input
           type="radio"
           id="disable"
-          name="participation"
-          value="does not participate"
-          @click=updateParticipants(-1)
+          value=""
+          v-model="workout.nrOfParticipants"
+          @click="updateParticipants(-1)"
           />
           <label for="disable">Ei osale</label>
       </div>      
@@ -42,7 +42,7 @@
   import { useRouter } from 'vue-router';
   import { Workout } from '@/modules/workout';
   import axios from 'axios';
-import { info } from 'console';
+  import { id } from 'date-fns/locale';
   
   export default defineComponent({
     data() {
@@ -51,38 +51,32 @@ import { info } from 'console';
     async mounted() {
       const router = useRouter();
       const id = +router.currentRoute.value.params.id;
-      const response = await fetch('https://localhost:5000/api/Workouts/' + id);
+      const response = await fetch('http://localhost:5000/api/Workouts/' + id);
       this.workout = await response.json();
     },
     methods: {
     async updateParticipants(value: number) {
-      console.log(this.workout?.nrOfParticipants);
-      if (!this.workout) {
-        console.log("Fuck javascript");
-        return};
-      if (this.workout.nrOfParticipants + value < 0) {
-        this.workout.nrOfParticipants = -value;
-        console.log("Fuck programming")
-        
-      }
-      else if (this.workout.nrOfParticipants + value > this.workout.maxParticipants) {
-        this.workout.nrOfParticipants  = parseInt(this.workout.maxParticipants.toString()) - value;
-        console.log("Fuck university")
-        
-      }
-      this.workout.nrOfParticipants = parseInt(this.workout.nrOfParticipants.toString()) + value;
-      
-      console.log(this.workout.nrOfParticipants);
-      
-      try {
-        await axios.put('https://localhost:5000/api/Workouts/' + this.workout.id, this.workout);}
-      catch (error) {
+      if (this.workout && this.workout.nrOfParticipants + value >= 0 && this.workout.nrOfParticipants + value <= this.workout.maxParticipants) {
+        this.workout.nrOfParticipants += value;
+        try {
+          await axios.put('http://localhost:5000/api/Workouts/' + this.workout.id, {
+            id: this.workout.id,
+            name: this.workout.name,
+            trainer: this.workout.trainer,
+            description: this.workout.description,
+            location: this.workout.location,
+            date: this.workout.date,
+            startTime: this.workout.startTime,
+            endTime: this.workout.endTime,
+            maxParticipants: this.workout.maxParticipants,
+            nrOfParticipants: this.workout.nrOfParticipants
+          } 
+        );
+      } catch (error) {
         console.log(error)
       }
-    console.log(this.workout?.nrOfParticipants);
-    console.log(value);
+    }
   }
-}
-});
-</script>
+  }});
+  </script>
   

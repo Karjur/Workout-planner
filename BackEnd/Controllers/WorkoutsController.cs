@@ -71,6 +71,29 @@ namespace BackEnd.Controllers
 
             return NoContent();
         }
+        [HttpPost("/add-workout-user")]
+        public IActionResult AddWorkoutUser([FromBody] WorkoutUser workoutUser)
+        {
+            var dbWorkout = _context.WorkoutList!.Find(workoutUser.WorkoutId);
+            if (dbWorkout == null)
+            {
+                return Conflict();
+            }
+            var dbUser = _context.UserList!.Find(workoutUser.UserId);
+            if(dbUser == null)
+            {
+                return Conflict();
+            }
 
+            if(_context.WorkoutUserList.Any(wu => wu.UserId == workoutUser.UserId && wu.WorkoutId == workoutUser.WorkoutId)) {
+                return Conflict();
+            }
+
+            _context.Add(workoutUser);
+            //dbWorkout.WorkoutUsers.Add(workoutUser);
+            _context.SaveChanges();
+
+            return Ok(workoutUser);
+        }
     }
 }

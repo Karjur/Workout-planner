@@ -1,11 +1,7 @@
 {
   "format": 1,
   "restore": {
-<<<<<<< HEAD
     "C:\\Users\\Polina Volohhonskaja\\Project\\itb2203-2022-sportlyz\\BackEnd\\Sportlyz.csproj": {}
-=======
-    "C:\\Users\\karlk\\Sportlyz\\itb2203-2022-sportlyz\\BackEnd\\SPORTLYZ.csproj": {}
->>>>>>> dcb8dcb71ce27aabf49fc03b7b18f347e1e88e55
   },
   "projects": {
     "C:\\Users\\Polina Volohhonskaja\\Project\\itb2203-2022-sportlyz\\BackEnd\\Sportlyz.csproj": {
@@ -21,12 +17,8 @@
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-<<<<<<< HEAD
           "C:\\Users\\Polina Volohhonskaja\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-=======
-          "C:\\Users\\karlk\\AppData\\Roaming\\NuGet\\NuGet.Config",
->>>>>>> dcb8dcb71ce27aabf49fc03b7b18f347e1e88e55
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

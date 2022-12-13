@@ -6,7 +6,6 @@ build_property.ProjectTypeGuids =
 build_property.InvariantGlobalization = 
 build_property.PlatformNeutralAssembly = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
-<<<<<<< HEAD
 build_property.RootNamespace = Sportlyz
 build_property.RootNamespace = Sportlyz
 build_property.ProjectDir = C:\Users\Polina Volohhonskaja\Project\itb2203-2022-sportlyz\BackEnd\
@@ -14,13 +13,4 @@ build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
 build_property.MSBuildProjectDirectory = C:\Users\Polina Volohhonskaja\Project\itb2203-2022-sportlyz\BackEnd
-=======
-build_property.RootNamespace = SPORTLYZ
-build_property.RootNamespace = SPORTLYZ
-build_property.ProjectDir = C:\Users\karlk\Sportlyz\itb2203-2022-sportlyz\BackEnd\
-build_property.RazorLangVersion = 6.0
-build_property.SupportLocalizedComponentNames = 
-build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\karlk\Sportlyz\itb2203-2022-sportlyz\BackEnd
->>>>>>> dcb8dcb71ce27aabf49fc03b7b18f347e1e88e55
 build_property._RazorSourceGeneratorDebug = 
