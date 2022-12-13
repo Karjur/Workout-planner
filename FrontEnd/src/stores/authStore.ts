@@ -1,4 +1,3 @@
-+24 - 0;
 import { IPageData } from '@/router';
 import { privatePaths, publicPaths } from '@/router/access';
 import { defineStore } from 'pinia';

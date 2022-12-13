@@ -12,7 +12,7 @@
         </li>
         <li v-if="auth.isAuth" @click="logout">
           <a class="router-link-active router-link-exact-active link">
-            Log out ({{ auth.role }})
+            Log out
           </a>
         </li>
       </ul>
