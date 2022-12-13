@@ -3494,11 +3494,16 @@
     ]
   },
   "packageFolders": {
+<<<<<<< HEAD
     "C:\\Users\\karlk\\.nuget\\packages\\": {}
+=======
+    "C:\\Users\\karmo\\.nuget\\packages\\": {}
+>>>>>>> 262ed4f50366416ef207113d0268076a0cf69352
   },
   "project": {
     "version": "1.0.0",
     "restore": {
+<<<<<<< HEAD
       "projectUniqueName": "C:\\Users\\karlk\\Sportlyz\\itb2203-2022-sportlyz\\BackEnd\\SPORTLYZ.csproj",
       "projectName": "SPORTLYZ",
       "projectPath": "C:\\Users\\karlk\\Sportlyz\\itb2203-2022-sportlyz\\BackEnd\\SPORTLYZ.csproj",
@@ -3507,6 +3512,16 @@
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\karlk\\AppData\\Roaming\\NuGet\\NuGet.Config",
+=======
+      "projectUniqueName": "C:\\Users\\karmo\\OneDrive\\Desktop\\itb2203-2022-sportlyz\\BackEnd\\SPORTLYZ.csproj",
+      "projectName": "SPORTLYZ",
+      "projectPath": "C:\\Users\\karmo\\OneDrive\\Desktop\\itb2203-2022-sportlyz\\BackEnd\\SPORTLYZ.csproj",
+      "packagesPath": "C:\\Users\\karmo\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\karmo\\OneDrive\\Desktop\\itb2203-2022-sportlyz\\BackEnd\\obj\\",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "C:\\Users\\karmo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+>>>>>>> 262ed4f50366416ef207113d0268076a0cf69352
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

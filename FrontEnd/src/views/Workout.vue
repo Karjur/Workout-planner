@@ -1,43 +1,41 @@
 <template>
-  <div class="center">
-    <div class="box">
-    <div v-if="workout != null">
-      <div>Trenni nimi: {{ workout.name }}</div>
-      <div>Treener: {{ workout.trainer }}</div>
-      <div>Kirjeldus: {{ workout.description }}</div>
-      <div>Asukoht: {{ workout.location }}</div>
-      <div>Kuupäev: {{ workout.date }}</div>
-      <div>Algus: {{ workout.startTime }}</div>
-      <div>Lõpp: {{ workout.endTime }}</div>
-      <div>Max osalejad: {{ workout.maxParticipants }}</div>
-      <div>Osalejad: {{ workout.nrOfParticipants }}</div>
-      <input type="checkbox" v-model="checked" @click="updateParticipants(1)" />
-            <input
-              type="radio"
-              id="enable"
-              value="10"
-              v-model="workout.nrOfParticipants"
-              @click="updateParticipants(1)"
-              checked
-            />
-            <label for="enable">Going</label>
-            <br />
-            <input
-              type="radio"
-              id="disable"
-              value=""
-              v-model="workout.nrOfParticipants"
-              @click="updateParticipants(-1)"
-            />
-            <label for="disable">Not going</label>
-          </div>
-          <div>
-      <button class="text-red-500" @click="updateParticipants(1)">I will be attending the workout</button>
-      <button class="text-red-500" @click="updateParticipants(-1)">I will not be attending the workout</button>
+  <div v-if="workout != null">
+  <div class="grid-container">
+      <div class="item1">Trenni nimi: {{ workout.name }}</div>
+      <div class="item2">Kuupäev: {{ workout.date }}</div>
+      <div class="item3">Algus: {{ workout.startTime }}</div>
+      <div class="item4">Lõpp: {{ workout.endTime }}</div>
+      <div class="item5">Treener: {{ workout.trainer }}</div>
+      <div class="item6">Asukoht: {{ workout.location }}</div>
+      <div class="item7"></div>
+      <div class="item8">Osalejad: {{ workout.nrOfParticipants }} / {{ workout.maxParticipants }}</div>
+      <div class="item9">
+        <input
+          type="radio"
+          id="enable"
+          value="10"
+          v-model="workout.nrOfParticipants"
+          @click="updateParticipants(1)"
+          checked
+          />
+          <label for="enable">Osalen</label>
+      </div>
+      <div class="item10">
+        <input
+          type="radio"
+          id="disable"
+          value=""
+          v-model="workout.nrOfParticipants"
+          @click="updateParticipants(-1)"
+          />
+          <label for="disable">Ei osale</label>
+      </div>      
+      <div class="item11">Kirjeldus: {{ workout.description }}</div>
+      </div>
+      <div>
     </div>
   </div>
-  </div>
-  </template>
+</template>
   
   <script lang="ts">
   import { defineComponent } from 'vue';
@@ -52,7 +50,7 @@
     async mounted() {
       const router = useRouter();
       const id = +router.currentRoute.value.params.id;
-      const response = await fetch('https://localhost:5000/api/Workouts/' + id);
+      const response = await fetch('http://localhost:5000/api/Workouts/' + id);
       this.workout = await response.json();
     },
     methods: {
